@@ -35,14 +35,10 @@ export const BurgerMenu = () => {
   const [isOpen, setOpen] = useState(false);
 
   if (isOpen) {
-    document.body.style.height = "100%";
-    document.body.style.overflow = "hidden";
   }
 
   useEffect(() => {
     if (!isOpen) {
-      document.body.style.height = "auto";
-      document.body.style.overflow = "auto";
     }
   }, [isOpen]);
 

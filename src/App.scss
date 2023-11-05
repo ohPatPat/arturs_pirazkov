@@ -1,137 +1,438 @@
 //COLOR MODS
 $Spot: rgb(5, 193, 157);
-$SpotDark: rgb(20, 96, 81);
+$DarkSpot: rgb(20, 96, 81);
+
+$Background: rgba(5, 193, 159, 0.659);
+$Background2: rgba(71, 98, 95, 0.815);
+
 
 * {
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    list-style: none;
-    box-sizing: border-box;
-    font-family: "Roboto", sans-serif;
-    outline: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  outline: none;
 }
 body::-webkit-scrollbar {
-    display: none;
+  display: none;
+}
+
+h2 {
+  font-size: 18vw;
+  text-transform: uppercase;
+  color: $Spot;
+  padding-bottom: 5vw;
 }
 
 body {
-    overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  background-image: url("/assets/img/Background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+#Spacing {
+  display: flex;
+  flex-direction: column;
+  gap: 20vw;
+  padding: 0 5vw 20vw;
 }
 
 header {
-    background-color: blue;
-    padding: 2vw 5vw 2vw 5vw;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  top: 0;
+  height: 12vw;
+  width: 100vw;
+  padding: 2vw 5vw;
+  z-index: 9999999;
+
+  #CoverUp {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 4;
+  }
+
+  img {
+    height: 100%;
     z-index: 5;
-    #HeaderNav {
-        width: 100%;
-        // display: flex;
-        display: none;
+  }
+  #HeaderNav {
+    width: 100%;
+    // display: flex;
+    display: none;
 
-        justify-content: center;
+    justify-content: center;
+    z-index: 999999;
 
-        ul {
-            display: flex;
-            justify-content: space-between;
-            gap: 2vw;
-            text-transform: uppercase;
+    ul {
+      display: flex;
+      justify-content: space-between;
+      gap: 2vw;
+      text-transform: uppercase;
 
-            li {
-                position: relative;
-                a {
-                    font-size: 1vw;
-                    font-weight: 800;
-                    position: relative;
-                    mix-blend-mode: difference;
-
-                    cursor: pointer;
-                }
-            }
-        }
-    }
-
-    .hamburger-react {
-        display: block;
-        color: red;
-        fill: red;
-        z-index: 5;
-        div {
-            color: red;
-        }
-        &[aria-expanded="true"] {
-            div {
-                color: red;
-            }
-        }
-    }
-    #burgerNotActive,
-    #burgerActive {
-        display: block;
-        padding: 0;
-        position: fixed;
-        top: 0;
-        left: 50vw;
-        width: 50vw;
-        height: 100vh;
-        overflow-x: hidden;
-        z-index: 4;
-        ul {
-            position: absolute;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: left;
-            gap: 6vw;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            padding-left: 5vw;
-            transition: ease-out 0.5s;
-            overflow: hidden;
-
-            background: rgba(0, 0, 0, 0.855);
-            backdrop-filter: blur(14.5px);
-            z-index: 9999;
-            li {
-                position: relative;
-                a {
-                    mix-blend-mode: normal;
-                    text-transform: uppercase;
-                    font-size: 6vw;
-                    color: white;
-                    &.active {
-                        color: red;
-                    }
-                }
-            }
-        }
-    }
-    #burgerNotActive {
-        pointer-events: none;
-        ul {
-            margin-left: 100%;
-        }
-    }
-    #burgerActive {
-        pointer-events: visiblePainted;
-        ul {
-            margin-left: 0%;
-        }
-    }
-
-    #MobileLogo {
-        display: none;
-    }
-    #Logo {
-        display: none;
-    }
-    #Title {
+      li {
         position: relative;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 30vw;
-        z-index: 1;
-        cursor: pointer;
+        a {
+          font-size: 1vw;
+          font-weight: 800;
+          position: relative;
+          mix-blend-mode: difference;
+
+          cursor: pointer;
+        }
+      }
     }
+  }
+
+  .hamburger-react {
+    display: block;
+    color: $Spot;
+    fill: $Spot;
+    z-index: 5;
+    div {
+      color: $Spot;
+    }
+    &[aria-expanded="true"] {
+      div {
+        color: $Spot;
+      }
+    }
+  }
+  #burgerNotActive,
+  #burgerActive {
+    display: block;
+    padding: 0;
+    position: fixed;
+    top: 0%;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    z-index: 4;
+    ul {
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      align-items: left;
+      gap: 2vw;
+      left: 55%;
+      width: 45%;
+      height: 100%;
+      padding-top: 6vh;
+      padding-left: 4vw;
+      transition: ease-out 1s;
+      overflow: hidden;
+
+      background-color: $Background2;
+      backdrop-filter: blur(14.5px);
+      z-index: 3;
+      li {
+        position: relative;
+        a {
+          mix-blend-mode: normal;
+          text-transform: uppercase;
+          font-size: 6vw;
+          color: white;
+          font-weight: 800;
+          &.active {
+            color: $DarkSpot;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+  #burgerNotActive {
+    pointer-events: none;
+    ul {
+      margin-left: 100%;
+    }
+  }
+  #burgerActive {
+    pointer-events: visiblePainted;
+    ul {
+      margin-left: 0%;
+    }
+  }
+
+  #MobileLogo {
+    display: none;
+  }
+  #Logo {
+    display: none;
+  }
+  #Title {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30vw;
+    z-index: 1;
+    cursor: pointer;
+  }
+}
+
+#HeroImg {
+  figure {
+    position: relative;
+    width: 100%;
+    top: 10vw;
+    img {
+      width: 100%;
+    }
+    figcaption {
+      width: 100vw;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+
+      article {
+        text-align: center;
+        h1 {
+          color: white;
+          font-size: 7vw;
+          text-transform: uppercase;
+          font-weight: 800;
+        }
+        h2 {
+          color: white;
+          font-size: 6vw;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}
+
+#OmMig {
+  padding-top: 30vw;
+  figure {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    gap: 5vw;
+
+    h2 {
+      position: absolute;
+      font-size: 18vw;
+      text-transform: uppercase;
+      top: -14vw;
+      left: 0;
+      z-index: 5;
+      color: $Spot;
+    }
+    figcaption {
+      position: absolute;
+      width: 90%;
+      left: 0;
+      top: 65vw;
+      background-color: $Background2;
+      padding: 5vw;
+      z-index: 4;
+      article {
+        p {
+          width: 100%;
+          color: white;
+          line-height: 1.5;
+        }
+      }
+    }
+    #Long {
+      width: 90%;
+      height: fit-content;
+      filter: drop-shadow(0px 14px 10px #00000053);
+      z-index: 3;
+    }
+    #Short {
+      display: none;
+      width: 80%;
+      height: fit-content;
+    }
+  }
+}
+
+#Priser {
+  padding-top: 20vw;
+  article {
+  }
+}
+
+#Galleri {
+  div{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 4vw;
+    padding-bottom: 10vw;
+  }
+  .form-control {
+    font-size: 5vw;
+    line-height: 1.1;
+    display: flex;
+    gap: 2vw;
+  }
+  input[type="checkbox"] {
+    appearance: none;
+    background-color: white;
+    margin: 0;
+    font: inherit;
+    color: black;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid currentColor;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+  }
+
+  input[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    background-color: $Spot;
+
+  }
+  input[type="checkbox"]:checked::before {
+    transform: scale(1);
+  }
+
+
+
+
+  section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10vw;
+
+    hr {
+      width: 70vw;
+      border: 2px solid $Background;
+      margin: auto;
+    }
+    #HideSpam {
+      display: none;
+    }
+    figure {
+      img {
+        width: 100%;
+        filter: drop-shadow(0px 14px 10px #00000053);
+      }
+      figcaption {
+        h5 {
+          color: $Spot;
+          font-size: 6vw;
+          text-align: center;
+          padding-top: 4vw;
+        }
+        p {
+          text-align: center;
+          font-size: 4vw;
+          padding-top: 2vw;
+        }
+      }
+    }
+  }
+}
+
+
+#Kontakt{
+  background-color: white;
+  padding: 0 5vw 20vw;
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    #FormWrapper {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6vw;
+      padding-bottom: 5vw;
+    }
+
+    .InputWrapper,
+    .InputWrapperError,
+    .TextareaError {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      width: 100%;
+
+      &.InputWrapperError,
+      &.TextareaError {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        width: 100%;
+        input,
+        textarea {
+          border: solid 3px red;
+        }
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 3vw;
+        border-radius: 1vw;
+        resize: none;
+        outline: 3px solid $Background2;
+        border: none;
+        font-size: 3.5vw;
+
+        &:focus {
+          outline: 3px solid $Spot;
+        }
+        &:hover {
+          outline: 3px solid $Spot;
+        }
+      }
+    }
+    span {
+      padding: 0;
+      line-height: 2;
+      color: red;
+      font-size: 4vw;
+      font-weight: 600;
+    }
+
+    button {
+      background-color: $Spot;
+      margin: 0;
+      padding: 3vw 5vw 1vw;
+      border-radius: 50px;
+      border: 3px solid $Spot;
+      width: 30vw;
+      color: $Spot;
+      font-size: 5vw;
+      font-family: industry-inc-base, sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    #noShow {
+      display: none;
+      margin-top: 5vw;
+    }
+    #Show {
+      margin-top: 5vw;
+      font-size: 15vw;
+    }
+  }
 }

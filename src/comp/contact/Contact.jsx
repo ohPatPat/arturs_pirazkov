@@ -18,7 +18,7 @@ export const Contact = () => {
       setError();
       clearErrors();
       setSubmitMessage(null);
-      console.log("reset");
+      console.log("Error");
     }
   };
 
@@ -26,10 +26,10 @@ export const Contact = () => {
     //e.preventDefault();
     emailjs
       .sendForm(
-        "service_3ug98ao",
+        "service_y61gwxn",
         "template_ymliug1",
         form.current,
-        "PWAaqSbEwQXEo4NqD"
+        "PYEu-muCwrU1C2kq2"
       )
 
       .then(
@@ -39,7 +39,7 @@ export const Contact = () => {
         },
         (error) => {
           console.log("fail");
-          setError("Kunne ikke sende!");
+          setError(true);
         }
       );
     document.getElementById("Form").reset();
@@ -50,15 +50,25 @@ export const Contact = () => {
     if (isSubmitSuccessful) {
       timeoutId = setTimeout(() => {
         setSubmitMessage(null);
-      }, 5000); // change back to "noShow" after 5 seconds (adjust as needed)
+      }, 10000); // change back to "noShow" after 5 seconds (adjust as needed)
     }
     return () => clearTimeout(timeoutId);
   }, [isSubmitSuccessful]);
 
-
   return (
     <section id="Kontakt">
       <h2>kontakt</h2>
+      <article>
+        <p>
+          Har du fundet noget, der har fanget din interesse, eller har du nogle
+          spørgsmål? 
+          <br />
+          <br />
+          - Så er du mere end er velkommen til at kontakte mig her. 
+          Jeg skifter vores samtale til email, så sørg venligst for at skrive dine informationer
+          korrekt.
+        </p>
+      </article>
       <form id="Form" ref={form} onSubmit={handleSubmit(sendEmail)}>
         <div id="FormWrapper">
           <div
@@ -78,18 +88,39 @@ export const Contact = () => {
               })}
             />
             {errors.userName?.type === "required" && (
-              <span>You need to write your name!</span>
+              <span>- Hust at skrive dit navn</span>
             )}
           </div>
 
           <div
             className={
-              Error || errors.userContact ? "InputWrapperError" : "InputWrapper"
+              Error || errors.userOrder ? "InputWrapperError" : "InputWrapper"
             }
           >
             <input
               onClick={clearFields}
-              type="tel"
+              type="text"
+              name="userOrder"
+              placeholder="Din ordre?* - Fx 'Nr. 35' eller 'Lysets Horisont'"
+              autoComplete="off"
+              {...register("userOrder", {
+                required: true,
+                min: 2,
+              })}
+            />
+            {errors.userOrder?.type === "required" && (
+              <span>- Husk at skrive hvad du er interesseret i</span>
+            )}
+          </div>
+
+          <div
+            className={
+              Error || errors.userPhone ? "InputWrapperError" : "InputWrapper"
+            }
+          >
+            <input
+              onClick={clearFields}
+              type="number"
               name="userPhone"
               placeholder="Dit Telefonnummer?*"
               autoComplete="off"
@@ -98,16 +129,14 @@ export const Contact = () => {
                 min: 2,
               })}
             />
-            {errors.userContact?.type === "required" && (
-              <span>You need to write your contact!</span>
+            {errors.userPhone?.type === "required" && (
+              <span>- Husk at skrive en korrekt telefonnummer</span>
             )}
           </div>
 
           <div
             className={
-              Error || errors.userEmail
-                ? "InputWrapperError"
-                : "InputWrapper"
+              Error || errors.userEmail ? "InputWrapperError" : "InputWrapper"
             }
           >
             <input
@@ -122,7 +151,7 @@ export const Contact = () => {
               })}
             />
             {errors.userEmail?.type === "required" && (
-              <span>You need to write what you want!</span>
+              <span>- Husk at skrive en korrekt email </span>
             )}
           </div>
 
@@ -137,7 +166,7 @@ export const Contact = () => {
               onClick={clearFields}
               type="text"
               name="userQuestion"
-              placeholder="Any questions?"
+              placeholder="Kommentar?"
               autoComplete="off"
             />
           </div>
@@ -150,7 +179,8 @@ export const Contact = () => {
         >
           Send
         </button>
-        <h2 id={submitMessage ? "Show" : "noShow"}>👍</h2>
+        <h6 className={submitMessage ? "Show Good" : "noShow"}>Beskeden er sendt</h6>
+        <h6 className={errors.userOrder ? "Show Bad" : "noShow"}>Beskeden bliv ikke sendt</h6>
       </form>
     </section>
   );

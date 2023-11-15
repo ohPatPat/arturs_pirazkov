@@ -1,5 +1,5 @@
 import "../../App.scss";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import Aurora1 from "../../assets/img/aurora/Farvernes Kraft i Nattens Skær.jpg";
 import Aurora2 from "../../assets/img/aurora/Gudernes Gave.jpg";
@@ -321,67 +321,67 @@ export const Gallary = (props) => {
     {
       img: Port3,
       name: "Det Strandede Paradis",
-      number: "026",
+      number: "025",
       checked: portIsChecked,
     },
     {
       img: Port4,
       name: "Fortidens Fine Front",
-      number: "027",
+      number: "026",
       checked: portIsChecked,
     },
     {
       img: Port5,
       name: "Havnen ved Lyby",
-      number: "028",
+      number: "027",
       checked: portIsChecked,
     },
     {
       img: Port6,
       name: "Havnens Farvedans",
-      number: "029",
+      number: "028",
       checked: portIsChecked,
     },
     {
       img: Port7,
       name: "Havnens Nærbillede",
-      number: "030",
+      number: "029",
       checked: portIsChecked,
     },
     {
       img: Port8,
       name: "Kystens Vilde Liv",
-      number: "031",
+      number: "030",
       checked: portIsChecked,
     },
     {
       img: Port9,
       name: "Lysets Kraft i Mørkets Skygge",
-      number: "032",
+      number: "031",
       checked: portIsChecked,
     },
     {
       img: Port10,
       name: "Lysets Værdi",
-      number: "033",
+      number: "032",
       checked: portIsChecked,
     },
     {
       img: Port11,
       name: "Nattens Lys Ved Havet",
-      number: "034",
+      number: "033",
       checked: portIsChecked,
     },
     {
       img: Port12,
       name: "Selskabslivet På Vandet",
-      number: "035",
+      number: "034",
       checked: portIsChecked,
     },
     {
       img: Port13,
       name: "Selskabslivet På Vandet 2",
-      number: "036",
+      number: "035",
       checked: portIsChecked,
     },
   ];
@@ -390,79 +390,79 @@ export const Gallary = (props) => {
     {
       img: Beach1,
       name: "Bænkens plads til Pause.jpg",
-      number: "037",
+      number: "036",
       checked: beachIsChecked,
     },
     {
       img: Beach2,
       name: "Essensen af Refleksion",
-      number: "038",
+      number: "037",
       checked: beachIsChecked,
     },
     {
       img: Beach3,
       name: "Havets Bølger ved vesterhavet",
-      number: "039",
+      number: "038",
       checked: beachIsChecked,
     },
     {
       img: Beach4,
       name: "Himmels Lavendel Passion",
-      number: "040",
+      number: "039",
       checked: beachIsChecked,
     },
     {
       img: Beach5,
       name: "Horisontens Evige Gang",
-      number: "041",
+      number: "040",
       checked: beachIsChecked,
     },
     {
       img: Beach6,
       name: "Landets Hemmeligheder i selskab med Himlens Gave",
-      number: "042",
+      number: "041",
       checked: beachIsChecked,
     },
     {
       img: Beach7,
       name: "Lavvandets Hemmeligheder",
-      number: "043",
+      number: "042",
       checked: beachIsChecked,
     },
     {
       img: Beach8,
       name: "Lys i Mørket",
-      number: "045",
+      number: "043",
       checked: beachIsChecked,
     },
     {
       img: Beach9,
       name: "Nattens Vidunder",
-      number: "046",
+      number: "044",
       checked: beachIsChecked,
     },
     {
       img: Beach10,
       name: "Sivets Evige Udsigt",
-      number: "047",
+      number: "045",
       checked: beachIsChecked,
     },
     {
       img: Beach11,
       name: "Skønhed fra Himlens Perspektiv",
-      number: "048",
+      number: "046",
       checked: beachIsChecked,
     },
     {
       img: Beach12,
       name: "Storkens Stille Sind",
-      number: "049",
+      number: "047",
       checked: beachIsChecked,
     },
     {
       img: Beach13,
       name: "Vindens dans",
-      number: "050",
+      number: "048",
       checked: beachIsChecked,
     },
   ];
@@ -471,31 +471,31 @@ export const Gallary = (props) => {
     {
       img: Ship1,
       name: "Aftensolen over Vesterhavets Sømænd",
-      number: "051",
+      number: "049",
       checked: shipIsChecked,
     },
     {
       img: Ship2,
       name: "FN437 - Strandens Stolthed",
-      number: "052",
+      number: "050",
       checked: shipIsChecked,
     },
     {
       img: Ship3,
       name: "Havets Idyl",
-      number: "053",
+      number: "051",
       checked: shipIsChecked,
     },
     {
       img: Ship4,
       name: "Rebet og Kæden - Skibets værdifulde redskaber",
-      number: "054",
+      number: "052",
       checked: shipIsChecked,
     },
     {
       img: Ship5,
       name: "Vragets Skønhed",
-      number: "055",
+      number: "053",
       checked: shipIsChecked,
     },
   ];
@@ -504,61 +504,61 @@ export const Gallary = (props) => {
     {
       img: Animal1,
       name: "Barndommens Nysgerrighed",
-      number: "056",
+      number: "054",
       checked: animalIsChecked,
     },
     {
       img: Animal2,
       name: "Gæsling i Vandets Overflade",
-      number: "057",
+      number: "055",
       checked: animalIsChecked,
     },
     {
       img: Animal3,
       name: "I Skovens Dybe Ro",
-      number: "058",
+      number: "056",
       checked: animalIsChecked,
     },
     {
       img: Animal4,
       name: "Måge ved Solnedgang",
-      number: "059",
+      number: "057",
       checked: animalIsChecked,
     },
     {
       img: Animal5,
       name: "Muslingejagt i Solens Varme",
-      number: "060",
+      number: "058",
       checked: animalIsChecked,
     },
     {
       img: Animal6,
       name: "Nysgerrighed",
-      number: "061",
+      number: "059",
       checked: animalIsChecked,
     },
     {
       img: Animal7,
       name: "Ræveunge i Græssets Skjul",
-      number: "062",
+      number: "060",
       checked: animalIsChecked,
     },
     {
       img: Animal8,
       name: "Ræveungende",
-      number: "063",
+      number: "061",
       checked: animalIsChecked,
     },
     {
       img: Animal9,
       name: "Ungdommens Energi",
-      number: "064",
+      number: "062",
       checked: animalIsChecked,
     },
     {
       img: Animal10,
       name: "Vingernes Vilde Liv",
-      number: "065",
+      number: "063",
       checked: animalIsChecked,
     },
   ];
@@ -567,37 +567,37 @@ export const Gallary = (props) => {
     {
       img: Drawing1,
       name: "Havnens blide Liv",
-      number: "066",
+      number: "064",
       checked: drawingIsChecked,
     },
     {
       img: Drawing2,
       name: "Havnens Harmoni",
-      number: "067",
+      number: "065",
       checked: drawingIsChecked,
     },
     {
       img: Drawing3,
       name: "Landsbyens Liv",
-      number: "067",
+      number: "066",
       checked: drawingIsChecked,
     },
     {
       img: Drawing4,
       name: "Rustikkens Værdi",
-      number: "068",
+      number: "067",
       checked: drawingIsChecked,
     },
     {
       img: Drawing5,
       name: "Toppens Nærbillede",
-      number: "069",
+      number: "068",
       checked: drawingIsChecked,
     },
     {
       img: Drawing6,
       name: "Vandets Spejlbillede i Søens Strøm",
-      number: "070",
+      number: "069",
       checked: drawingIsChecked,
     },
   ];
@@ -606,49 +606,49 @@ export const Gallary = (props) => {
     {
       img: Stuff1,
       name: "Aftenroens Stilhed",
-      number: "071",
+      number: "070",
       checked: stuffIsChecked,
     },
     {
       img: Stuff2,
       name: "Balancens Perfektion",
-      number: "072",
+      number: "071",
       checked: stuffIsChecked,
     },
     {
       img: Stuff3,
       name: "Bølgernes Mørke Passion",
-      number: "073",
+      number: "072",
       checked: stuffIsChecked,
     },
     {
       img: Stuff4,
       name: "Havets Vilde Sind",
-      number: "074",
+      number: "073",
       checked: stuffIsChecked,
     },
     {
       img: Stuff5,
       name: "Himlens Gave",
-      number: "075",
+      number: "074",
       checked: stuffIsChecked,
     },
     {
       img: Stuff6,
       name: "I Bølgernes Kaos",
-      number: "076",
+      number: "075",
       checked: stuffIsChecked,
     },
     {
       img: Stuff7,
       name: "Naturens Gave",
-      number: "077",
+      number: "076",
       checked: stuffIsChecked,
     },
     {
       img: Stuff8,
       name: "Sten Vandfald ved Flønder Sø",
-      number: "078",
+      number: "077",
       checked: stuffIsChecked,
     },
   ];
@@ -669,7 +669,7 @@ export const Gallary = (props) => {
     <section id="Galleri">
       <h2>Galleri</h2>
       <div>
-        <label class="form-control">
+        <label className="form-control">
           <input
             type="checkbox"
             checked={auroraIsChecked}
@@ -677,7 +677,7 @@ export const Gallary = (props) => {
           />
           Nordlys
         </label>
-        <label class="form-control">
+        <label className="form-control">
           <input
             type="checkbox"
             checked={lighthouseIsChecked}
@@ -685,7 +685,7 @@ export const Gallary = (props) => {
           />
           Fyrtårn
         </label>
-        <label class="form-control">
+        <label className="form-control">
           <input
             type="checkbox"
             checked={portIsChecked}
@@ -693,7 +693,7 @@ export const Gallary = (props) => {
           />
           Havn
         </label>
-        <label class="form-control">
+        <label className="form-control">
           <input
             type="checkbox"
             checked={beachIsChecked}
@@ -701,7 +701,7 @@ export const Gallary = (props) => {
           />
           Strand
         </label>
-        <label class="form-control">
+        <label className="form-control">
           <input
             type="checkbox"
             checked={shipIsChecked}
@@ -709,7 +709,7 @@ export const Gallary = (props) => {
           />
           Skib
         </label>
-        <label class="form-control">
+        <label className="form-control">
           <input
             type="checkbox"
             checked={animalIsChecked}
@@ -717,7 +717,7 @@ export const Gallary = (props) => {
           />
           Dyr
         </label>
-        <label class="form-control">
+        <label className="form-control">
           <input
             type="checkbox"
             checked={drawingIsChecked}
@@ -725,7 +725,7 @@ export const Gallary = (props) => {
           />
           Tegninger
         </label>
-        <label class="form-control">
+        <label className="form-control">
           <input
             type="checkbox"
             checked={stuffIsChecked}

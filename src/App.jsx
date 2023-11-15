@@ -5,6 +5,8 @@ import { About } from "./comp/about/About";
 import { Price } from "./comp/price/Price";
 import { Gallary } from "./comp/gallary/Gallary";
 import { Contact } from "./comp/contact/Contact";
+import { Footer } from "./comp/footer/Footer";
+
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
         <Gallary />
       </div>
         <Contact />
+        <Footer />
     </div>
   );
 }

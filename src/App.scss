@@ -223,12 +223,9 @@ header {
 
     h2 {
       position: absolute;
-      font-size: 18vw;
-      text-transform: uppercase;
       top: -14vw;
       left: 0;
       z-index: 5;
-      color: $Spot;
     }
     figcaption {
       position: absolute;
@@ -261,7 +258,7 @@ header {
 }
 
 #Priser {
-  padding-top: 20vw;
+  padding-top: 25vh;
   article {
   }
 }

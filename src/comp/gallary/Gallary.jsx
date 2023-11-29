@@ -1,16 +1,19 @@
 import "../../App.scss";
 import React, { useState } from "react";
 
+import Placeholder from "../../assets/img/Placeholder.jpg";
+
+
 import Aurora1 from "../../assets/img/aurora/Farvernes Kraft i Nattens Skær.jpg";
 import Aurora2 from "../../assets/img/aurora/Gudernes Gave.jpg";
 import Aurora3 from "../../assets/img/aurora/Nordlysets Dansk over Himlen.jpg";
 
-import Lighthouse1 from "../../assets/img/lighthouse/At Føle Sig Lille.jpg";
+import Lighthouse1 from "../../assets/img/lighthouse/Giganten.jpg";
 import Lighthouse2 from "../../assets/img/lighthouse/En Tåget Nat.jpg";
 import Lighthouse3 from "../../assets/img/lighthouse/Farven i Horisonten.jpg";
 import Lighthouse4 from "../../assets/img/lighthouse/Fyrtårnets Kontrast.jpg";
 import Lighthouse5 from "../../assets/img/lighthouse/Fyrtårnets Lyse Nat.jpg";
-import Lighthouse6 from "../../assets/img/lighthouse/Fyrtårnets Strandede Skønhed.jpg";
+import Lighthouse6 from "../../assets/img/lighthouse/Lighthouse6.jpg";
 import Lighthouse7 from "../../assets/img/lighthouse/Fyrtårnets Vidunderlige Omgivelser.jpg";
 import Lighthouse8 from "../../assets/img/lighthouse/Himlens farvedans bag Fyrtårnet.jpg";
 import Lighthouse9 from "../../assets/img/lighthouse/Horisonten Der Gemmer.jpg";
@@ -19,12 +22,12 @@ import Lighthouse11 from "../../assets/img/lighthouse/Kraften af Ensomhed.jpg";
 import Lighthouse12 from "../../assets/img/lighthouse/Lavendel Paradis.jpg";
 import Lighthouse13 from "../../assets/img/lighthouse/Lysets Horisont.jpg";
 import Lighthouse14 from "../../assets/img/lighthouse/Månens Smil i Fyrtårnets Baggrund.jpg";
-import Lighthouse15 from "../../assets/img/lighthouse/Markens Skønne Baggrund.jpg";
-import Lighthouse16 from "../../assets/img/lighthouse/Med Skønheden I Fokus.jpg";
+import Lighthouse15 from "../../assets/img/lighthouse/Lighthouse15.jpg";
+import Lighthouse16 from "../../assets/img/lighthouse/Lighthouse16.jpg";
 import Lighthouse17 from "../../assets/img/lighthouse/Naturens Kaos i Fyrtårnets Baggrund.jpg";
 import Lighthouse18 from "../../assets/img/lighthouse/Solnedgangens Farver i Fyrtårnets Skygge.jpg";
 import Lighthouse19 from "../../assets/img/lighthouse/Strandet Fyrtårn nær Havet.jpg";
-import Lighthouse20 from "../../assets/img/lighthouse/Vinterens Milde Skønhed.jpg";
+import Lighthouse20 from "../../assets/img/lighthouse/Lighthouse20.jpg";
 
 import Port1 from "../../assets/img/port/At Holde Ved.jpg";
 import Port2 from "../../assets/img/port/Den Lyse Nat.jpg";
@@ -34,7 +37,7 @@ import Port5 from "../../assets/img/port/Havnen ved Lyby.jpg";
 import Port6 from "../../assets/img/port/Havnens Farvedans.jpg";
 import Port7 from "../../assets/img/port/Havnens Nærbillede.jpg";
 import Port8 from "../../assets/img/port/Kystens Vilde Liv.jpg";
-import Port9 from "../../assets/img/port/Lysets Kraft i Mørkets Skygge.jpg";
+import Port9 from "../../assets/img/port/Port9.jpg";
 import Port10 from "../../assets/img/port/Lysets Værdi.jpg";
 import Port11 from "../../assets/img/port/Nattens Lys Ved Havet.jpg";
 import Port12 from "../../assets/img/port/Selskabslivet På Vandet.jpg";
@@ -42,23 +45,23 @@ import Port13 from "../../assets/img/port/Selskabslivet På Vandet 2.jpg";
 
 import Beach1 from "../../assets/img/beach/Bænkens plads til Pause.jpg";
 import Beach2 from "../../assets/img/beach/Essensen af Refleksion.jpg";
-import Beach3 from "../../assets/img/beach/Havets Bølger ved vesterhavet.jpg";
+import Beach3 from "../../assets/img/beach/Beach3.jpg";
 import Beach4 from "../../assets/img/beach/Himmels Lavendel Passion.jpg";
 import Beach5 from "../../assets/img/beach/Horisontens Evige Gang.jpg";
 import Beach6 from "../../assets/img/beach/Landets Hemmeligheder i selskab med Himlens Gave.jpg";
 import Beach7 from "../../assets/img/beach/Lavvandets Hemmeligheder.jpg";
-import Beach8 from "../../assets/img/beach/Lys i Mørket.jpg";
+import Beach8 from "../../assets/img/beach/Beach8.jpg";
 import Beach9 from "../../assets/img/beach/Nattens Vidunder.jpg";
 import Beach10 from "../../assets/img/beach/Sivets Evige Udsigt.jpg";
-import Beach11 from "../../assets/img/beach/Skønhed fra Himlens Perspektiv.jpg";
+import Beach11 from "../../assets/img/beach/Beach11.jpg";
 import Beach12 from "../../assets/img/beach/Storkens Stille Sind.jpg";
 import Beach13 from "../../assets/img/beach/Vindens dans.jpg";
 
-import Ship1 from "../../assets/img/ship/Aftensolen over Vesterhavets Sømænd.jpg";
+import Ship1 from "../../assets/img/ship/Ship1.jpg";
 import Ship2 from "../../assets/img/ship/FN437 - Strandens Stolthed.jpg";
 import Ship3 from "../../assets/img/ship/Havets Idyl.jpg";
 import Ship4 from "../../assets/img/ship/Rebet og Kæden - Skibets værdifulde redskaber.jpg";
-import Ship5 from "../../assets/img/ship/Vragets Skønhed.jpg";
+import Ship5 from "../../assets/img/ship/Ship5.jpg";
 
 import Animal1 from "../../assets/img/animal/Barndommens Nysgerrighed.jpg";
 import Animal2 from "../../assets/img/animal/Gæsling i Vandets Overflade.jpg";
@@ -76,16 +79,16 @@ import Drawing2 from "../../assets/img/drawing/Havnens Harmoni.jpg";
 import Drawing3 from "../../assets/img/drawing/Landsbyens Liv.jpg";
 import Drawing4 from "../../assets/img/drawing/Rustikkens Værdi.jpg";
 import Drawing5 from "../../assets/img/drawing/Toppens Nærbillede.jpg";
-import Drawing6 from "../../assets/img/drawing/Vandets Spejlbillede i Søens Strøm.jpg";
+import Drawing6 from "../../assets/img/drawing/Drawing6.jpg";
 
 import Stuff1 from "../../assets/img/stuff/Aftenroens Stilhed.jpg";
 import Stuff2 from "../../assets/img/stuff/Balancens Perfektion.jpg";
-import Stuff3 from "../../assets/img/stuff/Bølgernes Mørke Passion.jpg";
+import Stuff3 from "../../assets/img/stuff/Stuff3.jpg";
 import Stuff4 from "../../assets/img/stuff/Havets Vilde Sind.jpg";
 import Stuff5 from "../../assets/img/stuff/Himlens Gave.jpg";
-import Stuff6 from "../../assets/img/stuff/I Bølgernes Kaos.jpg";
+import Stuff6 from "../../assets/img/stuff/Stuff6.jpg";
 import Stuff7 from "../../assets/img/stuff/Naturens Gave.jpg";
-import Stuff8 from "../../assets/img/stuff/Sten Vandfald ved Flønder Sø.jpg";
+import Stuff8 from "../../assets/img/stuff/Stuff8.jpg";
 
 export const Gallary = (props) => {
   const [auroraIsChecked, setAuroraChecked] = useState(true);
@@ -185,7 +188,7 @@ export const Gallary = (props) => {
   let Lighthouse = [
     {
       img: Lighthouse1,
-      name: "At Føle Sig Lille",
+      name: "Giganten",
       number: "004",
       checked: lighthouseIsChecked,
     },
@@ -656,7 +659,7 @@ export const Gallary = (props) => {
   const ImgLoop = (props) => {
     return props.List.map(({ img, name, number, checked }) => (
       <figure id={checked ? "ShowSpam" : "HideSpam"} key={img}>
-        <img src={img} alt={img} loading="lazy" />
+        <img src={img} alt={name} loading="lazy" />
         <figcaption>
           <h5>{name}</h5>
           <p>{`Nr. ${number}`}</p>

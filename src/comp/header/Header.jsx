@@ -8,11 +8,11 @@ export const Header = (props) => {
   return (
     <header>
         <img src={Logo} alt="" loading="lazy" />
-        <img src={Name} alt="" loading="lazy" />
         <Nav
           identify={"HeaderNav"}
           name={({ isActive }) => (isActive ? "Active" : "")}
         />
+        <img src={Name} alt="" loading="lazy" />
 
         <BurgerMenu />
         <div id="CoverUp"></div>

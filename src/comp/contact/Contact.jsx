@@ -65,7 +65,7 @@ export const Contact = () => {
           <br />
           <br />
           - Så er du mere end er velkommen til at kontakte mig her. 
-          Jeg skifter vores samtale til email, så sørg venligst for at skrive dine informationer
+          Derefter skifter vi samtalen over email, så sørg venligst for at skrive dine informationer
           korrekt.
         </p>
       </article>
@@ -80,7 +80,7 @@ export const Contact = () => {
               onClick={clearFields}
               type="text"
               name="userName"
-              placeholder="Dit Navn?*"
+              placeholder="Dit Navn*"
               autoComplete="off"
               {...register("userName", {
                 required: true,
@@ -101,7 +101,7 @@ export const Contact = () => {
               onClick={clearFields}
               type="text"
               name="userOrder"
-              placeholder="Din ordre?* - Fx 'Nr. 35' eller 'Lysets Horisont'"
+              placeholder="Din ordre* - Fx Fyrtårn - Nr. 1 eller Giganten"
               autoComplete="off"
               {...register("userOrder", {
                 required: true,
@@ -122,7 +122,7 @@ export const Contact = () => {
               onClick={clearFields}
               type="number"
               name="userPhone"
-              placeholder="Dit Telefonnummer?*"
+              placeholder="Dit Telefonnummer*"
               autoComplete="off"
               {...register("userPhone", {
                 required: true,
@@ -143,7 +143,7 @@ export const Contact = () => {
               onClick={clearFields}
               type="email"
               name="userEmail"
-              placeholder="Dit Email?*"
+              placeholder="Dit Email*"
               autoComplete="off"
               {...register("userEmail", {
                 required: true,
@@ -166,7 +166,7 @@ export const Contact = () => {
               onClick={clearFields}
               type="text"
               name="userQuestion"
-              placeholder="Kommentar?"
+              placeholder="Kommentar"
               autoComplete="off"
             />
           </div>

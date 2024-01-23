@@ -1,94 +1,169 @@
 import "../../App.scss";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import ImageZoom from "react-image-zooom";
 
-import Placeholder from "../../assets/img/Placeholder.jpg";
+import Aurora1 from "../../assets/img/aurora/Farvernes Kraft i Nattens Skær.webp";
+import Little_Aurora1 from "../../assets/img/aurora/Little_Farvernes Kraft i Nattens Skær.webp";
+import Aurora2 from "../../assets/img/aurora/Gudernes Gave.webp";
+import Little_Aurora2 from "../../assets/img/aurora/Little_Gudernes Gave.webp";
+import Aurora3 from "../../assets/img/aurora/Nordlysets Dansk over Himlen.webp";
+import Little_Aurora3 from "../../assets/img/aurora/Little_Nordlysets Dansk over Himlen.webp";
 
 
-import Aurora1 from "../../assets/img/aurora/Farvernes Kraft i Nattens Skær.jpg";
-import Aurora2 from "../../assets/img/aurora/Gudernes Gave.jpg";
-import Aurora3 from "../../assets/img/aurora/Nordlysets Dansk over Himlen.jpg";
+import Lighthouse1 from "../../assets/img/lighthouse/Giganten.webp";
+import Little_Lighthouse1 from "../../assets/img/lighthouse/Little_Giganten.webp";
+import Lighthouse2 from "../../assets/img/lighthouse/En Tåget Nat.webp";
+import Little_Lighthouse2 from "../../assets/img/lighthouse/Little_En Tåget Nat.webp";
+import Lighthouse3 from "../../assets/img/lighthouse/Farven i Horisonten.webp";
+import Little_Lighthouse3 from "../../assets/img/lighthouse/Little_Farven i Horisonten.webp";
+import Lighthouse4 from "../../assets/img/lighthouse/Fyrtårnets Kontrast.webp";
+import Little_Lighthouse4 from "../../assets/img/lighthouse/Little_Fyrtårnets Kontrast.webp";
+import Lighthouse5 from "../../assets/img/lighthouse/Fyrtårnets Lyse Nat.webp";
+import Little_Lighthouse5 from "../../assets/img/lighthouse/Little_Fyrtårnets Lyse Nat.webp";
+import Lighthouse6 from "../../assets/img/lighthouse/Lighthouse6.webp";
+import Little_Lighthouse6 from "../../assets/img/lighthouse/Little_Lighthouse6.webp";
+import Lighthouse7 from "../../assets/img/lighthouse/Fyrtårnets Vidunderlige Omgivelser.webp";
+import Little_Lighthouse7 from "../../assets/img/lighthouse/Little_Fyrtårnets Vidunderlige Omgivelser.webp";
+import Lighthouse8 from "../../assets/img/lighthouse/Himlens farvedans bag Fyrtårnet.webp";
+import Little_Lighthouse8 from "../../assets/img/lighthouse/Little_Himlens farvedans bag Fyrtårnet.webp";
+import Lighthouse9 from "../../assets/img/lighthouse/Horisonten Der Gemmer.webp";
+import Little_Lighthouse9 from "../../assets/img/lighthouse/Little_Horisonten Der Gemmer.webp";
+import Lighthouse10 from "../../assets/img/lighthouse/Hvad Der Ses I Lyset.webp";
+import Little_Lighthouse10 from "../../assets/img/lighthouse/Little_Hvad Der Ses I Lyset.webp";
+import Lighthouse11 from "../../assets/img/lighthouse/Kraften af Ensomhed.webp";
+import Little_Lighthouse11 from "../../assets/img/lighthouse/Little_Kraften af Ensomhed.webp";
+import Lighthouse12 from "../../assets/img/lighthouse/Lavendel Paradis.webp";
+import Little_Lighthouse12 from "../../assets/img/lighthouse/Little_Lavendel Paradis.webp";
+import Lighthouse13 from "../../assets/img/lighthouse/Lysets Horisont.webp";
+import Little_Lighthouse13 from "../../assets/img/lighthouse/Little_Lysets Horisont.webp";
+import Lighthouse14 from "../../assets/img/lighthouse/Månens Smil i Fyrtårnets Baggrund.webp";
+import Little_Lighthouse14 from "../../assets/img/lighthouse/Little_Månens Smil i Fyrtårnets Baggrund.webp";
+import Lighthouse15 from "../../assets/img/lighthouse/Lighthouse15.webp";
+import Little_Lighthouse15 from "../../assets/img/lighthouse/Little_Lighthouse15.webp";
+import Lighthouse16 from "../../assets/img/lighthouse/Lighthouse16.webp";
+import Little_Lighthouse16 from "../../assets/img/lighthouse/Little_Lighthouse16.webp";
+import Lighthouse17 from "../../assets/img/lighthouse/Naturens Kaos i Fyrtårnets Baggrund.webp";
+import Little_Lighthouse17 from "../../assets/img/lighthouse/Little_Naturens Kaos i Fyrtårnets Baggrund.webp";
+import Lighthouse18 from "../../assets/img/lighthouse/Solnedgangens Farver i Fyrtårnets Skygge.webp";
+import Little_Lighthouse18 from "../../assets/img/lighthouse/Little_Solnedgangens Farver i Fyrtårnets Skygge.webp";
+import Lighthouse19 from "../../assets/img/lighthouse/Strandet Fyrtårn nær Havet.webp";
+import Little_Lighthouse19 from "../../assets/img/lighthouse/Little_Strandet Fyrtårn nær Havet.webp";
+import Lighthouse20 from "../../assets/img/lighthouse/Lighthouse20.webp";
+import Little_Lighthouse20 from "../../assets/img/lighthouse/Little_Lighthouse20.webp";
 
-import Lighthouse1 from "../../assets/img/lighthouse/Giganten.jpg";
-import Lighthouse2 from "../../assets/img/lighthouse/En Tåget Nat.jpg";
-import Lighthouse3 from "../../assets/img/lighthouse/Farven i Horisonten.jpg";
-import Lighthouse4 from "../../assets/img/lighthouse/Fyrtårnets Kontrast.jpg";
-import Lighthouse5 from "../../assets/img/lighthouse/Fyrtårnets Lyse Nat.jpg";
-import Lighthouse6 from "../../assets/img/lighthouse/Lighthouse6.jpg";
-import Lighthouse7 from "../../assets/img/lighthouse/Fyrtårnets Vidunderlige Omgivelser.jpg";
-import Lighthouse8 from "../../assets/img/lighthouse/Himlens farvedans bag Fyrtårnet.jpg";
-import Lighthouse9 from "../../assets/img/lighthouse/Horisonten Der Gemmer.jpg";
-import Lighthouse10 from "../../assets/img/lighthouse/Hvad Der Ses I Lyset.jpg";
-import Lighthouse11 from "../../assets/img/lighthouse/Kraften af Ensomhed.jpg";
-import Lighthouse12 from "../../assets/img/lighthouse/Lavendel Paradis.jpg";
-import Lighthouse13 from "../../assets/img/lighthouse/Lysets Horisont.jpg";
-import Lighthouse14 from "../../assets/img/lighthouse/Månens Smil i Fyrtårnets Baggrund.jpg";
-import Lighthouse15 from "../../assets/img/lighthouse/Lighthouse15.jpg";
-import Lighthouse16 from "../../assets/img/lighthouse/Lighthouse16.jpg";
-import Lighthouse17 from "../../assets/img/lighthouse/Naturens Kaos i Fyrtårnets Baggrund.jpg";
-import Lighthouse18 from "../../assets/img/lighthouse/Solnedgangens Farver i Fyrtårnets Skygge.jpg";
-import Lighthouse19 from "../../assets/img/lighthouse/Strandet Fyrtårn nær Havet.jpg";
-import Lighthouse20 from "../../assets/img/lighthouse/Lighthouse20.jpg";
+import Port1 from "../../assets/img/port/At Holde Ved.webp";
+import Little_Port1 from "../../assets/img/port/Little_At Holde Ved.webp";
+import Port2 from "../../assets/img/port/Den Lyse Nat.webp";
+import Little_Port2 from "../../assets/img/port/Little_Den Lyse Nat.webp";
+import Port3 from "../../assets/img/port/Det Strandede Paradis.webp";
+import Little_Port3 from "../../assets/img/port/Little_Det Strandede Paradis.webp";
+import Port4 from "../../assets/img/port/Fortidens Fine Front.webp";
+import Little_Port4 from "../../assets/img/port/Little_Fortidens Fine Front.webp";
+import Port5 from "../../assets/img/port/Havnen ved Lyby.webp";
+import Little_Port5 from "../../assets/img/port/Little_Havnen ved Lyby.webp";
+import Port6 from "../../assets/img/port/Havnens Farvedans.webp";
+import Little_Port6 from "../../assets/img/port/Little_Havnens Farvedans.webp";
+import Port7 from "../../assets/img/port/Havnens Nærbillede.webp";
+import Little_Port7 from "../../assets/img/port/Little_Havnens Nærbillede.webp";
+import Port8 from "../../assets/img/port/Kystens Vilde Liv.webp";
+import Little_Port8 from "../../assets/img/port/Little_Kystens Vilde Liv.webp";
+import Port9 from "../../assets/img/port/Port9.webp";
+import Little_Port9 from "../../assets/img/port/Little_Port9.webp";
+import Port10 from "../../assets/img/port/Lysets Værdi.webp";
+import Little_Port10 from "../../assets/img/port/Little_Lysets Værdi.webp";
+import Port11 from "../../assets/img/port/Nattens Lys Ved Havet.webp";
+import Little_Port11 from "../../assets/img/port/Little_Nattens Lys Ved Havet.webp";
+import Port12 from "../../assets/img/port/Selskabslivet På Vandet.webp";
+import Little_Port12 from "../../assets/img/port/Little_Selskabslivet På Vandet.webp";
+import Port13 from "../../assets/img/port/Selskabslivet På Vandet 2.webp";
+import Little_Port13 from "../../assets/img/port/Little_Selskabslivet På Vandet 2.webp";
 
-import Port1 from "../../assets/img/port/At Holde Ved.jpg";
-import Port2 from "../../assets/img/port/Den Lyse Nat.jpg";
-import Port3 from "../../assets/img/port/Det Strandede Paradis.jpg";
-import Port4 from "../../assets/img/port/Fortidens Fine Front.jpg";
-import Port5 from "../../assets/img/port/Havnen ved Lyby.jpg";
-import Port6 from "../../assets/img/port/Havnens Farvedans.jpg";
-import Port7 from "../../assets/img/port/Havnens Nærbillede.jpg";
-import Port8 from "../../assets/img/port/Kystens Vilde Liv.jpg";
-import Port9 from "../../assets/img/port/Port9.jpg";
-import Port10 from "../../assets/img/port/Lysets Værdi.jpg";
-import Port11 from "../../assets/img/port/Nattens Lys Ved Havet.jpg";
-import Port12 from "../../assets/img/port/Selskabslivet På Vandet.jpg";
-import Port13 from "../../assets/img/port/Selskabslivet På Vandet 2.jpg";
+import Beach1 from "../../assets/img/beach/Bænkens plads til Pause.webp";
+import Little_Beach1 from "../../assets/img/beach/Little_Bænkens plads til Pause.webp";
+import Beach2 from "../../assets/img/beach/Essensen af Refleksion.webp";
+import Little_Beach2 from "../../assets/img/beach/Little_Essensen af Refleksion.webp";
+import Beach3 from "../../assets/img/beach/Beach3.webp";
+import Little_Beach3 from "../../assets/img/beach/Little_Beach3.webp";
+import Beach4 from "../../assets/img/beach/Himmels Lavendel Passion.webp";
+import Little_Beach4 from "../../assets/img/beach/Little_Himmels Lavendel Passion.webp";
+import Beach5 from "../../assets/img/beach/Horisontens Evige Gang.webp";
+import Little_Beach5 from "../../assets/img/beach/Little_Horisontens Evige Gang.webp";
+import Beach6 from "../../assets/img/beach/Landets Hemmeligheder i selskab med Himlens Gave.webp";
+import Little_Beach6 from "../../assets/img/beach/Little_Landets Hemmeligheder i selskab med Himlens Gave.webp";
+import Beach7 from "../../assets/img/beach/Lavvandets Hemmeligheder.webp";
+import Little_Beach7 from "../../assets/img/beach/Little_Lavvandets Hemmeligheder.webp";
+import Beach8 from "../../assets/img/beach/Beach8.webp";
+import Little_Beach8 from "../../assets/img/beach/Little_Beach8.webp";
+import Beach9 from "../../assets/img/beach/Nattens Vidunder.webp";
+import Little_Beach9 from "../../assets/img/beach/Little_Nattens Vidunder.webp";
+import Beach10 from "../../assets/img/beach/Sivets Evige Udsigt.webp";
+import Little_Beach10 from "../../assets/img/beach/Little_Sivets Evige Udsigt.webp";
+import Beach11 from "../../assets/img/beach/Beach11.webp";
+import Little_Beach11 from "../../assets/img/beach/Little_Beach11.webp";
+import Beach12 from "../../assets/img/beach/Storkens Stille Sind.webp";
+import Little_Beach12 from "../../assets/img/beach/Little_Storkens Stille Sind.webp";
+import Beach13 from "../../assets/img/beach/Vindens dans.webp";
+import Little_Beach13 from "../../assets/img/beach/Little_Vindens dans.webp";
 
-import Beach1 from "../../assets/img/beach/Bænkens plads til Pause.jpg";
-import Beach2 from "../../assets/img/beach/Essensen af Refleksion.jpg";
-import Beach3 from "../../assets/img/beach/Beach3.jpg";
-import Beach4 from "../../assets/img/beach/Himmels Lavendel Passion.jpg";
-import Beach5 from "../../assets/img/beach/Horisontens Evige Gang.jpg";
-import Beach6 from "../../assets/img/beach/Landets Hemmeligheder i selskab med Himlens Gave.jpg";
-import Beach7 from "../../assets/img/beach/Lavvandets Hemmeligheder.jpg";
-import Beach8 from "../../assets/img/beach/Beach8.jpg";
-import Beach9 from "../../assets/img/beach/Nattens Vidunder.jpg";
-import Beach10 from "../../assets/img/beach/Sivets Evige Udsigt.jpg";
-import Beach11 from "../../assets/img/beach/Beach11.jpg";
-import Beach12 from "../../assets/img/beach/Storkens Stille Sind.jpg";
-import Beach13 from "../../assets/img/beach/Vindens dans.jpg";
+import Ship1 from "../../assets/img/ship/Ship1.webp";
+import Little_Ship1 from "../../assets/img/ship/Little_Ship1.webp";
+import Ship2 from "../../assets/img/ship/FN437 - Strandens Stolthed.webp";
+import Little_Ship2 from "../../assets/img/ship/Little_FN437 - Strandens Stolthed.webp";
+import Ship3 from "../../assets/img/ship/Havets Idyl.webp";
+import Little_Ship3 from "../../assets/img/ship/Little_Havets Idyl.webp";
+import Ship4 from "../../assets/img/ship/Rebet og Kæden - Skibets værdifulde redskaber.webp";
+import Little_Ship4 from "../../assets/img/ship/Little_Rebet og Kæden - Skibets værdifulde redskaber.webp";
+import Ship5 from "../../assets/img/ship/Ship5.webp";
+import Little_Ship5 from "../../assets/img/ship/Little_Ship5.webp";
 
-import Ship1 from "../../assets/img/ship/Ship1.jpg";
-import Ship2 from "../../assets/img/ship/FN437 - Strandens Stolthed.jpg";
-import Ship3 from "../../assets/img/ship/Havets Idyl.jpg";
-import Ship4 from "../../assets/img/ship/Rebet og Kæden - Skibets værdifulde redskaber.jpg";
-import Ship5 from "../../assets/img/ship/Ship5.jpg";
+import Animal1 from "../../assets/img/animal/Barndommens Nysgerrighed.webp";
+import Little_Animal1 from "../../assets/img/animal/Little_Barndommens Nysgerrighed.webp";
+import Animal2 from "../../assets/img/animal/Gæsling i Vandets Overflade.webp";
+import Little_Animal2 from "../../assets/img/animal/Little_Gæsling i Vandets Overflade.webp";
+import Animal3 from "../../assets/img/animal/I Skovens Dybe Ro.webp";
+import Little_Animal3 from "../../assets/img/animal/Little_I Skovens Dybe Ro.webp";
+import Animal4 from "../../assets/img/animal/Måge ved Solnedgang.webp";
+import Little_Animal4 from "../../assets/img/animal/Little_Måge ved Solnedgang.webp";
+import Animal5 from "../../assets/img/animal/Muslingejagt i Solens Varme.webp";
+import Little_Animal5 from "../../assets/img/animal/Little_Muslingejagt i Solens Varme.webp";
+import Animal6 from "../../assets/img/animal/Nysgerrighed.webp";
+import Little_Animal6 from "../../assets/img/animal/Little_Nysgerrighed.webp";
+import Animal8 from "../../assets/img/animal/Ræveungende.webp";
+import Little_Animal8 from "../../assets/img/animal/Little_Ræveungende.webp";
+import Animal9 from "../../assets/img/animal/Ungdommens Energi.webp";
+import Little_Animal9 from "../../assets/img/animal/Little_Ungdommens Energi.webp";
+import Animal10 from "../../assets/img/animal/Vingernes Vilde Liv.webp";
+import Little_Animal10 from "../../assets/img/animal/Little_Vingernes Vilde Liv.webp";
 
-import Animal1 from "../../assets/img/animal/Barndommens Nysgerrighed.jpg";
-import Animal2 from "../../assets/img/animal/Gæsling i Vandets Overflade.jpg";
-import Animal3 from "../../assets/img/animal/I Skovens Dybe Ro.jpg";
-import Animal4 from "../../assets/img/animal/Måge ved Solnedgang.jpg";
-import Animal5 from "../../assets/img/animal/Muslingejagt i Solens Varme.jpg";
-import Animal6 from "../../assets/img/animal/Nysgerrighed.jpg";
-import Animal7 from "../../assets/img/animal/Ræveunge i Græssets Skjul.jpg";
-import Animal8 from "../../assets/img/animal/Ræveungende.jpg";
-import Animal9 from "../../assets/img/animal/Ungdommens Energi.jpg";
-import Animal10 from "../../assets/img/animal/Vingernes Vilde Liv.jpg";
+import Drawing1 from "../../assets/img/drawing/Havnens blide Liv.webp";
+import Little_Drawing1 from "../../assets/img/drawing/Little_Havnens blide Liv.webp";
+import Drawing2 from "../../assets/img/drawing/Havnens Harmoni.webp";
+import Little_Drawing2 from "../../assets/img/drawing/Little_Havnens Harmoni.webp";
+import Drawing3 from "../../assets/img/drawing/Landsbyens Liv.webp";
+import Little_Drawing3 from "../../assets/img/drawing/Little_Landsbyens Liv.webp";
+import Drawing4 from "../../assets/img/drawing/Rustikkens Værdi.webp";
+import Little_Drawing4 from "../../assets/img/drawing/Little_Rustikkens Værdi.webp";
+import Drawing5 from "../../assets/img/drawing/Toppens Nærbillede.webp";
+import Little_Drawing5 from "../../assets/img/drawing/Little_Toppens Nærbillede.webp";
+import Drawing6 from "../../assets/img/drawing/Drawing6.webp";
+import Little_Drawing6 from "../../assets/img/drawing/Little_Drawing6.webp";
 
-import Drawing1 from "../../assets/img/drawing/Havnens blide Liv.jpg";
-import Drawing2 from "../../assets/img/drawing/Havnens Harmoni.jpg";
-import Drawing3 from "../../assets/img/drawing/Landsbyens Liv.jpg";
-import Drawing4 from "../../assets/img/drawing/Rustikkens Værdi.jpg";
-import Drawing5 from "../../assets/img/drawing/Toppens Nærbillede.jpg";
-import Drawing6 from "../../assets/img/drawing/Drawing6.jpg";
-
-import Stuff1 from "../../assets/img/stuff/Aftenroens Stilhed.jpg";
-import Stuff2 from "../../assets/img/stuff/Balancens Perfektion.jpg";
-import Stuff3 from "../../assets/img/stuff/Stuff3.jpg";
-import Stuff4 from "../../assets/img/stuff/Havets Vilde Sind.jpg";
-import Stuff5 from "../../assets/img/stuff/Himlens Gave.jpg";
-import Stuff6 from "../../assets/img/stuff/Stuff6.jpg";
-import Stuff7 from "../../assets/img/stuff/Naturens Gave.jpg";
-import Stuff8 from "../../assets/img/stuff/Stuff8.jpg";
+import Stuff1 from "../../assets/img/stuff/Aftenroens Stilhed.webp";
+import Little_Stuff1 from "../../assets/img/stuff/Little_Aftenroens Stilhed.webp";
+import Stuff2 from "../../assets/img/stuff/Balancens Perfektion.webp";
+import Little_Stuff2 from "../../assets/img/stuff/Little_Balancens Perfektion.webp";
+import Stuff3 from "../../assets/img/stuff/Stuff3.webp";
+import Little_Stuff3 from "../../assets/img/stuff/Little_Stuff3.webp";
+import Stuff4 from "../../assets/img/stuff/Havets Vilde Sind.webp";
+import Little_Stuff4 from "../../assets/img/stuff/Little_Havets Vilde Sind.webp";
+import Stuff5 from "../../assets/img/stuff/Himlens Gave.webp";
+import Little_Stuff5 from "../../assets/img/stuff/Little_Himlens Gave.webp";
+import Stuff6 from "../../assets/img/stuff/Stuff6.webp";
+import Little_Stuff6 from "../../assets/img/stuff/Little_Stuff6.webp";
+import Stuff7 from "../../assets/img/stuff/Naturens Gave.webp";
+import Little_Stuff7 from "../../assets/img/stuff/Little_Naturens Gave.webp";
+import Stuff8 from "../../assets/img/stuff/Stuff8.webp";
+import Little_Stuff8 from "../../assets/img/stuff/Little_Stuff8.webp";
 
 export const Gallary = (props) => {
   const [auroraIsChecked, setAuroraChecked] = useState(true);
@@ -99,6 +174,59 @@ export const Gallary = (props) => {
   const [animalIsChecked, setAnimalChecked] = useState(true);
   const [drawingIsChecked, setDrawingChecked] = useState(true);
   const [stuffIsChecked, setStuffChecked] = useState(true);
+
+  const [imageSrc, setImageSrc] = useState("");
+  const [isModalOpenW, setIsModalOpenW] = useState(false);
+  const [isModalOpenH, setIsModalOpenH] = useState(false);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [isLargeScreen, setIsLargeScreen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsLargeScreen(window.innerWidth > 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  // function to handle click event and open the modal
+  const handleClickH = (src) => {
+    if (isLargeScreen) {
+      setImageSrc(src);
+      setIsModalOpenH(true);
+      setPrevScrollPos(window.scrollY);
+    }
+  };
+
+  const handleClickW = (src) => {
+    if (isLargeScreen) {
+      setImageSrc(src);
+      setIsModalOpenW(true);
+      setPrevScrollPos(window.scrollY);
+    }
+  };
+
+  console.log(imageSrc);
+
+  // function to close the modal
+  const handleClose = () => {
+    setImageSrc("");
+    setIsModalOpenH(false);
+    setIsModalOpenW(false);
+  };
+
+  useEffect(() => {
+    if (isModalOpenW || isModalOpenH) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+      window.scrollTo(0, prevScrollPos);
+    }
+  }, [isModalOpenW, isModalOpenH, prevScrollPos]);
 
   const handleAuroraChange = () => {
     if (auroraIsChecked) {
@@ -167,20 +295,23 @@ export const Gallary = (props) => {
   let Aurora = [
     {
       img: Aurora1,
+      imgLittle: Little_Aurora1,
       name: "Farvernes Kraft i Nattens Skær",
-      number: "001",
+      topic: "Nordlys",
       checked: auroraIsChecked,
     },
     {
       img: Aurora2,
+      imgLittle: Little_Aurora2,
       name: "Gudernes Gave",
-      number: "002",
+      topic: "Nordlys",
       checked: auroraIsChecked,
     },
     {
       img: Aurora3,
+      imgLittle: Little_Aurora3,
       name: "Nordlysets Dansk over Himlen",
-      number: "003",
+      topic: "Nordlys",
       checked: auroraIsChecked,
     },
   ];
@@ -188,122 +319,142 @@ export const Gallary = (props) => {
   let Lighthouse = [
     {
       img: Lighthouse1,
+      imgLittle: Little_Lighthouse1,
       name: "Giganten",
-      number: "004",
+      topic: "Fyrtårn",
       checked: lighthouseIsChecked,
     },
     {
       img: Lighthouse2,
+      imgLittle: Little_Lighthouse2,
       name: "En Tåget Nat",
-      number: "005",
+      topic: "Fyrtårn",
       checked: lighthouseIsChecked,
     },
     {
       img: Lighthouse3,
+      imgLittle: Little_Lighthouse3,
       name: "Farven i Horisonten",
-      number: "006",
+      topic: "Fyrtårn",
       checked: lighthouseIsChecked,
     },
     {
       img: Lighthouse4,
+      imgLittle: Little_Lighthouse4,
       name: "Fyrtårnets Kontrast",
-      number: "007",
+      topic: "Fyrtårn",
       checked: lighthouseIsChecked,
     },
     {
       img: Lighthouse5,
+      imgLittle: Little_Lighthouse5,
       name: "Fyrtårnets Lyse Nat",
-      number: "008",
+      topic: "Fyrtårn",
       checked: lighthouseIsChecked,
     },
     {
       img: Lighthouse6,
+      imgLittle: Little_Lighthouse6,
       name: "Fyrtårnets Strandede Skønhed",
-      number: "009",
+      topic: "Fyrtårn",
       checked: lighthouseIsChecked,
     },
     {
       img: Lighthouse7,
+      imgLittle: Little_Lighthouse7,
       name: "Fyrtårnets Vidunderlige Omgivelser",
-      number: "010",
+      topic: "Fyrtårn",
       checked: lighthouseIsChecked,
     },
     {
       img: Lighthouse8,
+      imgLittle: Little_Lighthouse8,
       name: "Himlens farvedans bag Fyrtårnet",
-      number: "011",
+      topic: "Fyrtårn",
       checked: lighthouseIsChecked,
     },
     {
       img: Lighthouse9,
+      imgLittle: Little_Lighthouse9,
       name: "Horisonten Der Gemmer",
-      number: "012",
+      topic: "Fyrtårn",
       checked: lighthouseIsChecked,
     },
     {
       img: Lighthouse10,
+      imgLittle: Little_Lighthouse10,
       name: "Hvad Der Ses I Lyset",
-      number: "013",
+      topic: "Fyrtårn",
       checked: lighthouseIsChecked,
     },
     {
       img: Lighthouse11,
+      imgLittle: Little_Lighthouse11,
       name: "Kraften af Ensomhed",
-      number: "014",
+      topic: "Fyrtårn",
       checked: lighthouseIsChecked,
     },
     {
       img: Lighthouse12,
+      imgLittle: Little_Lighthouse12,
       name: "Lavendel Paradis",
-      number: "015",
+      topic: "Fyrtårn",
       checked: lighthouseIsChecked,
     },
     {
       img: Lighthouse13,
+      imgLittle: Little_Lighthouse13,
       name: "Lysets Horisont",
-      number: "016",
+      topic: "Fyrtårn",
       checked: lighthouseIsChecked,
     },
     {
       img: Lighthouse14,
+      imgLittle: Little_Lighthouse14,
       name: "Månens Smil i Fyrtårnets Baggrund",
-      number: "017",
+      topic: "Fyrtårn",
       checked: lighthouseIsChecked,
     },
     {
       img: Lighthouse15,
+      imgLittle: Little_Lighthouse15,
       name: "Markens Skønne Baggrund",
-      number: "018",
+      topic: "Fyrtårn",
       checked: lighthouseIsChecked,
     },
     {
       img: Lighthouse16,
+      imgLittle: Little_Lighthouse16,
       name: "Med Skønheden I Fokus",
-      number: "019",
+      topic: "Fyrtårn",
       checked: lighthouseIsChecked,
     },
     {
       img: Lighthouse17,
+      imgLittle: Little_Lighthouse17,
       name: "Naturens Kaos i Fyrtårnets Baggrund",
-      number: "020",
+      topic: "Fyrtårn",
       checked: lighthouseIsChecked,
     },
     {
       img: Lighthouse18,
+      imgLittle: Little_Lighthouse18,
       name: "Solnedgangens Farver i Fyrtårnets Skygge",
-      number: "021",
+      topic: "Fyrtårn",
       checked: lighthouseIsChecked,
     },
     {
       img: Lighthouse19,
+      imgLittle: Little_Lighthouse19,
       name: "Strandet Fyrtårn nær Havet",
-      number: "022",
+      topic: "Fyrtårn",
       checked: lighthouseIsChecked,
     },
     {
       img: Lighthouse20,
+      imgLittle: Little_Lighthouse20,
       name: "Vinterens Milde Skønhed",
-      number: "023",
+      topic: "Fyrtårn",
       checked: lighthouseIsChecked,
     },
   ];
@@ -311,80 +462,93 @@ export const Gallary = (props) => {
   let Port = [
     {
       img: Port1,
+      imgLittle: Little_Port1,
       name: "At Holde Ved",
-      number: "024",
+      topic: "Havn",
       checked: portIsChecked,
     },
     {
       img: Port2,
+      imgLittle: Little_Port2,
       name: "Den Lyse Nat",
-      number: "025",
+      topic: "Havn",
       checked: portIsChecked,
     },
     {
       img: Port3,
+      imgLittle: Little_Port3,
       name: "Det Strandede Paradis",
-      number: "025",
+      topic: "Havn",
       checked: portIsChecked,
     },
     {
       img: Port4,
+      imgLittle: Little_Port4,
       name: "Fortidens Fine Front",
-      number: "026",
+      topic: "Havn",
       checked: portIsChecked,
     },
     {
       img: Port5,
+      imgLittle: Little_Port5,
       name: "Havnen ved Lyby",
-      number: "027",
+      topic: "Havn",
       checked: portIsChecked,
     },
     {
       img: Port6,
+      imgLittle: Little_Port6,
       name: "Havnens Farvedans",
-      number: "028",
+      topic: "Havn",
       checked: portIsChecked,
     },
     {
       img: Port7,
+      imgLittle: Little_Port7,
       name: "Havnens Nærbillede",
-      number: "029",
+      topic: "Havn",
       checked: portIsChecked,
     },
     {
       img: Port8,
+      imgLittle: Little_Port8,
       name: "Kystens Vilde Liv",
-      number: "030",
+      topic: "Havn",
       checked: portIsChecked,
     },
     {
       img: Port9,
+      imgLittle: Little_Port9,
       name: "Lysets Kraft i Mørkets Skygge",
-      number: "031",
+      topic: "Havn",
       checked: portIsChecked,
     },
     {
       img: Port10,
+      imgLittle: Little_Port10,
       name: "Lysets Værdi",
-      number: "032",
+      topic: "Havn",
       checked: portIsChecked,
     },
     {
       img: Port11,
+      imgLittle: Little_Port11,
       name: "Nattens Lys Ved Havet",
-      number: "033",
+      topic: "Havn",
       checked: portIsChecked,
     },
     {
       img: Port12,
+      imgLittle: Little_Port12,
       name: "Selskabslivet På Vandet",
-      number: "034",
+      topic: "Havn",
       checked: portIsChecked,
     },
     {
       img: Port13,
+      imgLittle: Little_Port13,
       name: "Selskabslivet På Vandet 2",
-      number: "035",
+      topic: "Havn",
       checked: portIsChecked,
     },
   ];
@@ -392,80 +556,93 @@ export const Gallary = (props) => {
   let Beach = [
     {
       img: Beach1,
-      name: "Bænkens plads til Pause.jpg",
-      number: "036",
+      imgLittle: Little_Beach1,
+      name: "Bænkens plads til Pause.webp",
+      topic: "Strand",
       checked: beachIsChecked,
     },
     {
       img: Beach2,
+      imgLittle: Little_Beach2,
       name: "Essensen af Refleksion",
-      number: "037",
+      topic: "Strand",
       checked: beachIsChecked,
     },
     {
       img: Beach3,
+      imgLittle: Little_Beach3,
       name: "Havets Bølger ved vesterhavet",
-      number: "038",
+      topic: "Strand",
       checked: beachIsChecked,
     },
     {
       img: Beach4,
+      imgLittle: Little_Beach4,
       name: "Himmels Lavendel Passion",
-      number: "039",
+      topic: "Strand",
       checked: beachIsChecked,
     },
     {
       img: Beach5,
+      imgLittle: Little_Beach5,
       name: "Horisontens Evige Gang",
-      number: "040",
+      topic: "Strand",
       checked: beachIsChecked,
     },
     {
       img: Beach6,
+      imgLittle: Little_Beach6,
       name: "Landets Hemmeligheder i selskab med Himlens Gave",
-      number: "041",
+      topic: "Strand",
       checked: beachIsChecked,
     },
     {
       img: Beach7,
+      imgLittle: Little_Beach7,
       name: "Lavvandets Hemmeligheder",
-      number: "042",
+      topic: "Strand",
       checked: beachIsChecked,
     },
     {
       img: Beach8,
+      imgLittle: Little_Beach8,
       name: "Lys i Mørket",
-      number: "043",
+      topic: "Strand",
       checked: beachIsChecked,
     },
     {
       img: Beach9,
+      imgLittle: Little_Beach9,
       name: "Nattens Vidunder",
-      number: "044",
+      topic: "Strand",
       checked: beachIsChecked,
     },
     {
       img: Beach10,
+      imgLittle: Little_Beach10,
       name: "Sivets Evige Udsigt",
-      number: "045",
+      topic: "Strand",
       checked: beachIsChecked,
     },
     {
       img: Beach11,
+      imgLittle: Little_Beach11,
       name: "Skønhed fra Himlens Perspektiv",
-      number: "046",
+      topic: "Strand",
       checked: beachIsChecked,
     },
     {
       img: Beach12,
+      imgLittle: Little_Beach12,
       name: "Storkens Stille Sind",
-      number: "047",
+      topic: "Strand",
       checked: beachIsChecked,
     },
     {
       img: Beach13,
+      imgLittle: Little_Beach13,
       name: "Vindens dans",
-      number: "048",
+      topic: "Strand",
       checked: beachIsChecked,
     },
   ];
@@ -473,32 +650,37 @@ export const Gallary = (props) => {
   let Ship = [
     {
       img: Ship1,
+      imgLittle: Little_Ship1,
       name: "Aftensolen over Vesterhavets Sømænd",
-      number: "049",
+      topic: "Strand",
       checked: shipIsChecked,
     },
     {
       img: Ship2,
+      imgLittle: Little_Ship2,
       name: "FN437 - Strandens Stolthed",
-      number: "050",
+      topic: "Strand",
       checked: shipIsChecked,
     },
     {
       img: Ship3,
+      imgLittle: Little_Ship3,
       name: "Havets Idyl",
-      number: "051",
+      topic: "Strand",
       checked: shipIsChecked,
     },
     {
       img: Ship4,
+      imgLittle: Little_Ship4,
       name: "Rebet og Kæden - Skibets værdifulde redskaber",
-      number: "052",
+      topic: "Strand",
       checked: shipIsChecked,
     },
     {
       img: Ship5,
+      imgLittle: Little_Ship5,
       name: "Vragets Skønhed",
-      number: "053",
+      topic: "Strand",
       checked: shipIsChecked,
     },
   ];
@@ -506,62 +688,65 @@ export const Gallary = (props) => {
   let Animal = [
     {
       img: Animal1,
+      imgLittle: Little_Animal1,
       name: "Barndommens Nysgerrighed",
-      number: "054",
+      topic: "Naturliv",
       checked: animalIsChecked,
     },
     {
       img: Animal2,
+      imgLittle: Little_Animal2,
       name: "Gæsling i Vandets Overflade",
-      number: "055",
+      topic: "Naturliv",
       checked: animalIsChecked,
     },
     {
       img: Animal3,
+      imgLittle: Little_Animal3,
       name: "I Skovens Dybe Ro",
-      number: "056",
+      topic: "Naturliv",
       checked: animalIsChecked,
     },
     {
       img: Animal4,
+      imgLittle: Little_Animal4,
       name: "Måge ved Solnedgang",
-      number: "057",
+      topic: "Naturliv",
       checked: animalIsChecked,
     },
     {
       img: Animal5,
+      imgLittle: Little_Animal5,
       name: "Muslingejagt i Solens Varme",
-      number: "058",
+      topic: "Naturliv",
       checked: animalIsChecked,
     },
     {
       img: Animal6,
+      imgLittle: Little_Animal6,
       name: "Nysgerrighed",
-      number: "059",
-      checked: animalIsChecked,
-    },
-    {
-      img: Animal7,
-      name: "Ræveunge i Græssets Skjul",
-      number: "060",
+      topic: "Naturliv",
       checked: animalIsChecked,
     },
     {
       img: Animal8,
+      imgLittle: Little_Animal8,
       name: "Ræveungende",
-      number: "061",
+      topic: "Naturliv",
       checked: animalIsChecked,
     },
     {
       img: Animal9,
+      imgLittle: Little_Animal9,
       name: "Ungdommens Energi",
-      number: "062",
+      topic: "Naturliv",
       checked: animalIsChecked,
     },
     {
       img: Animal10,
+      imgLittle: Little_Animal10,
       name: "Vingernes Vilde Liv",
-      number: "063",
+      topic: "Naturliv",
       checked: animalIsChecked,
     },
   ];
@@ -569,38 +754,44 @@ export const Gallary = (props) => {
   let Drawing = [
     {
       img: Drawing1,
+      imgLittle: Little_Drawing1,
       name: "Havnens blide Liv",
-      number: "064",
+      topic: "Tegning",
       checked: drawingIsChecked,
     },
     {
       img: Drawing2,
+      imgLittle: Little_Drawing2,
       name: "Havnens Harmoni",
-      number: "065",
+      topic: "Tegning",
       checked: drawingIsChecked,
     },
     {
       img: Drawing3,
+      imgLittle: Little_Drawing3,
       name: "Landsbyens Liv",
-      number: "066",
+      topic: "Tegning",
       checked: drawingIsChecked,
     },
     {
       img: Drawing4,
+      imgLittle: Little_Drawing4,
       name: "Rustikkens Værdi",
-      number: "067",
+      topic: "Tegning",
       checked: drawingIsChecked,
     },
     {
       img: Drawing5,
+      imgLittle: Little_Drawing5,
       name: "Toppens Nærbillede",
-      number: "068",
+      topic: "Tegning",
       checked: drawingIsChecked,
     },
     {
       img: Drawing6,
+      imgLittle: Little_Drawing6,
       name: "Vandets Spejlbillede i Søens Strøm",
-      number: "069",
+      topic: "Tegning",
       checked: drawingIsChecked,
     },
   ];
@@ -608,61 +799,70 @@ export const Gallary = (props) => {
   let Stuff = [
     {
       img: Stuff1,
+      imgLittle: Little_Stuff1,
       name: "Aftenroens Stilhed",
-      number: "070",
+      topic: "Diverse",
       checked: stuffIsChecked,
     },
     {
       img: Stuff2,
+      imgLittle: Little_Stuff2,
       name: "Balancens Perfektion",
-      number: "071",
+      topic: "Diverse",
       checked: stuffIsChecked,
     },
     {
       img: Stuff3,
+      imgLittle: Little_Stuff3,
       name: "Bølgernes Mørke Passion",
-      number: "072",
+      topic: "Diverse",
       checked: stuffIsChecked,
     },
     {
       img: Stuff4,
+      imgLittle: Little_Stuff4,
       name: "Havets Vilde Sind",
-      number: "073",
+      topic: "Diverse",
       checked: stuffIsChecked,
     },
     {
       img: Stuff5,
+      imgLittle: Little_Stuff5,
       name: "Himlens Gave",
-      number: "074",
+      topic: "Diverse",
       checked: stuffIsChecked,
     },
     {
       img: Stuff6,
+      imgLittle: Little_Stuff6,
       name: "I Bølgernes Kaos",
-      number: "075",
+      topic: "Diverse",
       checked: stuffIsChecked,
     },
     {
       img: Stuff7,
+      imgLittle: Little_Stuff7,
       name: "Naturens Gave",
-      number: "076",
+      topic: "Diverse",
       checked: stuffIsChecked,
     },
     {
       img: Stuff8,
+      imgLittle: Little_Stuff8,
       name: "Sten Vandfald ved Flønder Sø",
-      number: "077",
+      topic: "Diverse",
       checked: stuffIsChecked,
     },
   ];
 
   const ImgLoop = (props) => {
-    return props.List.map(({ img, name, number, checked }) => (
+    return props.List.map(({ img, imgLittle, name, topic, checked }, index) => (
       <figure id={checked ? "ShowSpam" : "HideSpam"} key={img}>
-        <img src={img} alt={name} loading="lazy" />
+        <img className="GallaryImg" src={imgLittle} alt={name} loading="lazy" onClick={() => handleClickH(img)}
+/>
         <figcaption>
           <h5>{name}</h5>
-          <p>{`Nr. ${number}`}</p>
+          <p>{`${topic} - Nr. ${index + 1}`}</p>
         </figcaption>
       </figure>
     ));
@@ -670,8 +870,57 @@ export const Gallary = (props) => {
 
   return (
     <section id="Galleri">
+      {isModalOpenW && (
+        <section id="Modal">
+          <ImageZoom
+            className="HighlightImgW"
+            zoomLensStyl="background-color: red;"
+            width="auto"
+            height=" 100%"
+            src={imageSrc}
+            alt={imageSrc}
+            zoom="300"
+          />
+
+          <span className="close-button" onClick={handleClose}>
+            <div className="in">
+              <div className="close-button-block"></div>
+              <div className="close-button-block"></div>
+            </div>
+            <div className="out">
+              <div className="close-button-block"></div>
+              <div className="close-button-block"></div>
+            </div>
+          </span>
+        </section>
+      )}
+      {isModalOpenH && (
+        <section id="Modal">
+          <ImageZoom
+            className="HighlightImgH"
+            zoomLensStyl="background-color: red;"
+            width="auto"
+            height=" 100%"
+            src={imageSrc}
+            alt={imageSrc}
+            zoom="300"
+          />
+
+          <span className="close-button" onClick={handleClose}>
+            <div className="in">
+              <div className="close-button-block"></div>
+              <div className="close-button-block"></div>
+            </div>
+            <div className="out">
+              <div className="close-button-block"></div>
+              <div className="close-button-block"></div>
+            </div>
+          </span>
+        </section>
+      )}
+
       <h2>Galleri</h2>
-      <div>
+      <div className="Div">
         <label className="form-control">
           <input
             type="checkbox"
@@ -718,7 +967,7 @@ export const Gallary = (props) => {
             checked={animalIsChecked}
             onChange={handleAnimalChange}
           />
-          Dyr
+          Naturliv
         </label>
         <label className="form-control">
           <input

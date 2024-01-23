@@ -7,15 +7,19 @@ import Name from "../../assets/img/icons/logo/Logo_GreenName.svg";
 export const Header = (props) => {
   return (
     <header>
+      <AnchorLink href="#HeroImg">
         <img src={Logo} alt="" loading="lazy" />
-        <Nav
-          identify={"HeaderNav"}
-          name={({ isActive }) => (isActive ? "Active" : "")}
-        />
+      </AnchorLink>
+      <Nav
+        identify={"HeaderNav"}
+        name={({ isActive }) => (isActive ? "Active" : "")}
+      />
+      <AnchorLink href="#HeroImg">
         <img src={Name} alt="" loading="lazy" />
+      </AnchorLink>
 
-        <BurgerMenu />
-        <div id="CoverUp"></div>
+      <BurgerMenu />
+      <div id="CoverUp"></div>
     </header>
   );
 };

@@ -1,6 +1,6 @@
 import "../../App.scss";
-import Long from "../../assets/img/ProfilePictureLong.jpg";
-import Short from "../../assets/img/ProfilePictureShort.jpg";
+import Long from "../../assets/img/ProfilePictureLong.webp";
+import Short from "../../assets/img/ProfilePictureShort.webp";
 
 export const About = (props) => {
   return (
@@ -16,7 +16,7 @@ export const About = (props) => {
               natur, arkitektur og det danske nordlys fotografering.
               <br />
               <br />
-              Jeg kom til Danmark for 11 år siden fra Letland, og virkelig falt for naturen i den nordlige del af Danmark. Der er utallige smukke steder, som man
+              Jeg kom til Danmark for 11 år siden fra Letland, og virkelig faldt for naturen i den nordlige del af Danmark. Der er utallige smukke steder, som man
               kan fotografere uendeligt, så jeg regner me at blive her i lang tid. Jeg
               har rejst meget i Europa, men i Danmark fandt jeg mig selv.
               <br />

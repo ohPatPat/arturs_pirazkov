@@ -18,6 +18,8 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+
+
 h2 {
   font-size: 18vw;
   text-transform: uppercase;
@@ -53,6 +55,7 @@ header {
   width: 100vw;
   padding: 2vw 5vw;
   z-index: 9999999;
+  box-shadow: 0px 2px 2px #00000053;
 
   #CoverUp {
     position: absolute;
@@ -62,7 +65,10 @@ header {
     background-color: white;
     z-index: 4;
   }
-
+  a {
+    height: 100%;
+    z-index: 5;
+  }
   img {
     height: 100%;
     z-index: 5;
@@ -128,7 +134,7 @@ header {
       left: 55%;
       width: 45%;
       height: 100%;
-      padding-top: 6vh;
+      padding-top: 15vw;
       padding-left: 4vw;
       transition: ease-out 1s;
       overflow: hidden;
@@ -240,25 +246,26 @@ header {
           width: 100%;
           color: white;
           line-height: 1.5;
+          font-size: 4vw;
         }
       }
     }
     #Long {
       width: 90%;
-      height: fit-content;
+      // height: fit-content;
       filter: drop-shadow(0px 14px 10px #00000053);
       z-index: 3;
     }
     #Short {
       display: none;
       width: 80%;
-      height: fit-content;
+      // height: fit-content;
     }
   }
 }
 
 #Priser {
-  padding-top: 25vh;
+  padding-top: 35vw;
   article {
     p {
       padding-top: 5vw;
@@ -290,7 +297,8 @@ header {
 }
 
 #Galleri {
-  div {
+  padding-top: 12vw;
+  .Div {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 4vw;
@@ -438,6 +446,7 @@ header {
 
       /* Firefox */
       input[type="number"] {
+        appearance: textfield;
         -moz-appearance: textfield;
       }
     }
@@ -497,222 +506,171 @@ footer {
       cursor: pointer;
       font-style: italic;
       color: white;
-      text-decoration: underline;
     }
   }
 }
 
-@media (min-width: 991px) {
+
+/* Styles for medium screens (tablets) */
+@media (min-width: 768px) {
+
   h2 {
-    font-size: 20vw;
+    font-size: 10vw;
     text-transform: uppercase;
     color: $Spot;
-    padding-bottom: 5vw;
+    padding-bottom: 2vw;
   }
 
   #Spacing {
     display: flex;
     flex-direction: column;
-    gap: 20vw;
-    padding: 0 5vw 20vw;
+    gap: 2vw;
+    padding: 0vw 5vw 10vw;
   }
 
+
   header {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    top: 0;
     height: 10vw;
     width: 100vw;
     padding: 3vw 5vw;
+    z-index: 9999999;
 
+    #CoverUp {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      z-index: 4;
+    }
+    a {
+      height: 100%;
+      z-index: 5;
+    }
     img {
       height: 100%;
       z-index: 5;
     }
+    #HeaderNav {
+      width: auto;
+      display: flex;
 
-    .hamburger-react {
-      display: block;
-      color: $Spot;
-      fill: $Spot;
-      z-index: 5;
-      div {
-        color: $Spot;
-      }
-      &[aria-expanded="true"] {
-        div {
-          color: $Spot;
-        }
-      }
-    }
-    #burgerNotActive,
-    #burgerActive {
-      display: block;
-      padding: 0;
-      position: fixed;
-      top: 0%;
-      left: 100%;
-      width: 100%;
-      height: 100%;
-      overflow-x: hidden;
-      z-index: 4;
+      justify-content: center;
+      z-index: 999999;
+
       ul {
-        position: fixed;
         display: flex;
-        flex-direction: column;
-        align-items: left;
+        justify-content: space-between;
         gap: 2vw;
-        left: 55%;
-        width: 45%;
-        height: 100%;
-        padding-top: 10vh;
-        padding-left: 4vw;
-        transition: ease-out 1s;
-        overflow: hidden;
+        text-transform: uppercase;
 
-        background-color: $Background2;
-        backdrop-filter: blur(14.5px);
-        z-index: 3;
         li {
           position: relative;
           a {
-            mix-blend-mode: normal;
-            text-transform: uppercase;
-            font-size: 5vw;
-            color: white;
+            font-size: 2.5vw;
             font-weight: 800;
-            &.active {
-              color: $DarkSpot;
+            position: relative;
+            color: $Spot;
+            cursor: pointer;
+
+            &:hover {
               text-decoration: underline;
             }
           }
         }
       }
     }
-    #burgerNotActive {
-      pointer-events: none;
-      ul {
-        margin-left: 100%;
-      }
+
+    .hamburger-react {
+      display: none;
     }
+    #burgerNotActive,
     #burgerActive {
-      pointer-events: visiblePainted;
-      ul {
-        margin-left: 0%;
-      }
-    }
-
-    #MobileLogo {
       display: none;
-    }
-    #Logo {
-      display: none;
-    }
-    #Title {
-      position: relative;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 30vw;
-      z-index: 1;
-      cursor: pointer;
-    }
-  }
-
-  #HeroImg {
-    figure {
-      position: relative;
-      width: 100%;
-      top: 10vw;
-      img {
-        width: 100%;
-      }
-      figcaption {
-        width: 100vw;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-
-        article {
-          text-align: center;
-          h1 {
-            color: white;
-            font-size: 7vw;
-            text-transform: uppercase;
-            font-weight: 800;
-          }
-          h2 {
-            color: white;
-            font-size: 6vw;
-            text-transform: uppercase;
-          }
-        }
-      }
     }
   }
 
   #OmMig {
-    padding-top: 30vw;
+    position: relative;
+    top: -10vw;
+    padding-top: 0vw;
     figure {
+      padding-top: 13vw;
       position: relative;
       display: flex;
-      justify-content: flex-end;
-      gap: 5vw;
+      justify-content: center;
+      gap: 0vw;
 
       h2 {
-        position: absolute;
-        top: -14vw;
-        left: 0;
-        z-index: 5;
+        display: none;
       }
       figcaption {
-        position: absolute;
-        width: 90%;
-        left: 0;
-        top: 65vw;
+        position: relative;
+        width: 40%;
+        left: 0vw;
+        top: 0vw;
         background-color: $Background2;
-        padding: 5vw;
+        padding: 2vw;
         z-index: 4;
         article {
           p {
             width: 100%;
             color: white;
             line-height: 1.5;
+            font-size: 1.5vw;
           }
         }
       }
       #Long {
-        width: 90%;
-        height: fit-content;
-        filter: drop-shadow(0px 14px 10px #00000053);
-        z-index: 3;
+        display: none;
       }
       #Short {
-        display: none;
-        width: 80%;
-        height: fit-content;
+        display: block;
+        width: 40%;
+        // height: fit-content;
+        filter: drop-shadow(0px 14px 10px #00000053);
       }
     }
   }
 
   #Priser {
-    padding-top: 25vh;
+    padding-top: 10vw;
+    padding-bottom: 10vw;
+    position: relative;
+
+
     article {
+      margin: auto;
       p {
-        padding-bottom: 7vw;
-        font-size: 4vw;
+        text-align: center;
+        width: 70vw;
+        padding-top: 1vw;
+        font-size: 1.5vw;
         line-height: 1.5;
+        margin: auto;
         span {
           text-decoration: underline;
         }
       }
       ul {
-        margin: auto;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         gap: 4vw;
         font-weight: 600;
-        font-size: 5vw;
+        font-size: 2vw;
+        text-align: center;
+        justify-content: center;
 
         background-color: white;
         border: solid 1px $Background;
-        padding: 7vw;
-        width: fit-content;
+        padding: 3vw;
+        width: 70vw;
 
         hr {
           border: solid 1px $Spot;
@@ -722,17 +680,126 @@ footer {
   }
 
   #Galleri {
-    div {
+    padding-top: 10vw;
+    #Modal {
+      position: fixed;
+      background-color: rgba(0, 0, 0, 0.646);
+      top: 0vw;
+      width: 100vw;
+      height: 100vh;
+      left: 0vw;
+      z-index: 9999999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: hidden;
+
+      .HighlightImgW {
+        height: 50%;
+      }
+      .HighlightImgH {
+        height: auto;
+        width: 80%;
+      }
+
+      $button-size: 40px;
+      $close-width: ($button-size / 10);
+
+      .close-button {
+        top: 2vw;
+        right: 2vw;
+        position: absolute;
+        width: $button-size;
+        height: $button-size;
+        overflow: hidden;
+        cursor: pointer;
+        > div {
+          position: relative;
+        }
+        &-block {
+          width: 40px;
+          height: 20px;
+          position: relative;
+          overflow: hidden;
+          &:before,
+          &:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: calc(55% - 4px);
+            display: block;
+            width: 4px;
+            height: 25px;
+            transform-origin: bottom center;
+            background: $Spot;
+            transition: all ease-out 280ms;
+          }
+          &:last-of-type {
+            transform: rotate(180deg);
+          }
+        }
+        .in {
+          .close-button-block {
+            &:before {
+              transition-delay: 280ms;
+              transform: translateX(20px) translateY(-20px) rotate(45deg);
+            }
+            &:after {
+              transition-delay: 280ms;
+              transform: translateX(-22px) translateY(-22px) rotate(-45deg);
+            }
+          }
+        }
+        .out {
+          position: absolute;
+          top: 0;
+          left: 0;
+          .close-button-block {
+            &:before {
+              transform: translateX(-5px) translateY(5px) rotate(45deg);
+            }
+            &:after {
+              transform: translateX(5px) translateY(5px) rotate(-45deg);
+            }
+          }
+        }
+        &:hover {
+          .in {
+            .close-button-block {
+              &:before {
+                transform: translateX(-5px) translateY(5px) rotate(45deg);
+              }
+              &:after {
+                transform: translateX(5px) translateY(5px) rotate(-45deg);
+              }
+            }
+          }
+          .out {
+            .close-button-block {
+              &:before {
+                transform: translateX(-20px) translateY(20px) rotate(45deg);
+              }
+              &:after {
+                transform: translateX(20px) translateY(20px) rotate(-45deg);
+              }
+            }
+          }
+        }
+      }
+    }
+
+
+    .Div {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 4vw;
-      padding-bottom: 10vw;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      gap: 2vw;
+      padding-bottom: 2vw;
     }
     .form-control {
-      font-size: 5vw;
+      font-size: 2vw;
       line-height: 1.1;
       display: flex;
-      gap: 2vw;
+      gap: 1vw;
     }
     input[type="checkbox"] {
       appearance: none;
@@ -763,33 +830,42 @@ footer {
 
     section {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 10vw;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 3vw;
 
       hr {
         width: 70vw;
         border: 2px solid $Background;
         margin: auto;
+        display: none;
       }
       #HideSpam {
         display: none;
       }
       figure {
-        img {
+        .GallaryImg {
+          object-fit: cover; /* Zoom the image to cover the square */
+          height: 30vw;
           width: 100%;
           filter: drop-shadow(0px 14px 10px #00000053);
+          cursor: pointer;
+          transition: 0.5s;
+
+          &:hover {
+            transform: scale(105%);
+          }
         }
         figcaption {
           h5 {
             color: $Spot;
-            font-size: 6vw;
+            font-size: 1.8vw;
             text-align: center;
-            padding-top: 4vw;
+            padding-top: 1vw;
           }
           p {
             text-align: center;
-            font-size: 4vw;
-            padding-top: 2vw;
+            font-size: 1.5vw;
+            padding-top: 0.5vw;
           }
         }
       }
@@ -798,24 +874,24 @@ footer {
 
   #Kontakt {
     background-color: white;
-    padding: 5vw 5vw 20vw;
-
+    padding: 12vw 5vw 20vw;
+  
     article {
       padding: 0 5vw 5vw;
       p {
-        font-size: 4vw;
+        font-size: 2.5vw;
         line-height: 1.5;
         font-style: italic;
       }
     }
-
+  
     form {
       position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
       width: 100%;
-
+  
       #FormWrapper {
         width: 100%;
         display: flex;
@@ -824,7 +900,7 @@ footer {
         gap: 6vw;
         padding-bottom: 5vw;
       }
-
+  
       .InputWrapper,
       .InputWrapperError,
       .TextareaError {
@@ -832,7 +908,7 @@ footer {
         flex-direction: column;
         align-items: start;
         width: 100%;
-
+  
         &.InputWrapperError,
         &.TextareaError {
           display: flex;
@@ -844,7 +920,7 @@ footer {
             border: solid 3px red;
           }
         }
-
+  
         input,
         textarea {
           width: 100%;
@@ -854,7 +930,7 @@ footer {
           outline: 3px solid $Background2;
           border: none;
           font-size: 3.5vw;
-
+  
           &:focus {
             outline: 3px solid $Spot;
           }
@@ -867,9 +943,10 @@ footer {
         input::-webkit-inner-spin-button {
           -webkit-appearance: none;
         }
-
+  
         /* Firefox */
         input[type="number"] {
+          appearance: textfield;
           -moz-appearance: textfield;
         }
       }
@@ -877,65 +954,53 @@ footer {
         padding: 0;
         line-height: 2;
         color: red;
-        font-size: 4vw;
+        font-size: 2.5vw;
         font-weight: 600;
       }
-
+  
       button {
         background-color: $Spot;
         margin: 0;
-        padding: 4vw 0vw;
+        padding: 2vw 0vw;
         border-radius: 4vw;
         border: none;
-        width: 30vw;
+        width: 20vw;
         color: white;
-        font-size: 5vw;
+        font-size: 3vw;
         font-family: industry-inc-base, sans-serif;
         font-weight: 400;
         font-style: normal;
-
+  
         &:hover {
           background-color: $DarkSpot;
         }
       }
-
+  
       .noShow {
         display: none;
         margin-top: 5vw;
       }
       .Show {
-        bottom: -12vw;
+        bottom: -10vw;
         position: absolute;
-
+  
         &.Good {
-          font-size: 8vw;
+          font-size: 5vw;
           color: $Spot;
         }
         &.Bad {
-          font-size: 5vw;
+          font-size: 3vw;
           color: red;
         }
       }
     }
   }
-
-  footer {
-    padding: 2vw 5vw 2vw;
-    background-color: $Background;
-
-    p {
-      text-align: center;
-      a {
-        cursor: pointer;
-        font-style: italic;
-        color: white;
-        text-decoration: underline;
-      }
-    }
-  }
+  
+  
 }
 
-@media (min-width: 1366px) {
+/* Styles for large screens (desktops) */
+@media (min-width: 1025px) {
   h2 {
     font-size: 4vw;
     text-transform: uppercase;
@@ -956,8 +1021,8 @@ footer {
   #Spacing {
     display: flex;
     flex-direction: column;
-    gap: 15vw;
-    padding: 0 5vw 10vw;
+    gap: 2vw;
+    padding: 0vw 5vw 10vw;
   }
 
   header {
@@ -980,7 +1045,10 @@ footer {
       background-color: white;
       z-index: 4;
     }
-
+    a {
+      height: 100%;
+      z-index: 5;
+    }
     img {
       height: 100%;
       z-index: 5;
@@ -1025,6 +1093,7 @@ footer {
   }
 
   #HeroImg {
+    height: 30vw;
     figure {
       top: -10vw;
       img {
@@ -1055,8 +1124,10 @@ footer {
   }
 
   #OmMig {
+    top: 0vw;
     padding-top: 0vw;
     figure {
+      padding-top: 10vw;
       position: relative;
       display: flex;
       justify-content: center;
@@ -1064,13 +1135,14 @@ footer {
 
       h2 {
         position: absolute;
-        top: -6vw;
+        top: 5vw;
         left: 15vw;
         z-index: 5;
+        display: none;
       }
       figcaption {
         position: relative;
-        width: 30%;
+        width: 33%;
         left: 0vw;
         top: 0vw;
         background-color: $Background2;
@@ -1081,7 +1153,7 @@ footer {
             width: 100%;
             color: white;
             line-height: 1.5;
-            font-size: 1vw;
+            font-size: 1.2vw;
           }
         }
       }
@@ -1090,31 +1162,34 @@ footer {
       }
       #Short {
         display: block;
-        width: 30%;
-        height: fit-content;
+        width: 33%;
+        // height: fit-content;
         filter: drop-shadow(0px 14px 10px #00000053);
       }
     }
   }
 
   #Priser {
-    padding-top: 0vh;
+    padding-top: 15vw;
+    padding-bottom: 0;
     position: relative;
 
     h2 {
       position: absolute;
-      top: -6vw;
+      top: 8vw;
       left: 15vw;
       z-index: 5;
     }
 
     article {
-      width: 50vw;
       margin: auto;
       p {
+        text-align: center;
+        width: 50vw;
         padding-top: 1vw;
         font-size: 1vw;
         line-height: 1.5;
+        margin: auto;
         span {
           text-decoration: underline;
         }
@@ -1140,7 +1215,120 @@ footer {
   }
 
   #Galleri {
-    div {
+    padding-top: 10vw;
+    #Modal {
+      position: fixed;
+      background-color: rgba(0, 0, 0, 0.646);
+      top: 0vw;
+      width: 100vw;
+      height: 100vh;
+      left: 0vw;
+      z-index: 9999999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: hidden;
+
+      .HighlightImgW {
+        height: 70%;
+      }
+      .HighlightImgH {
+        height: 90%;
+        width: auto;
+      }
+
+      $button-size: 40px;
+      $close-width: ($button-size / 10);
+
+      .close-button {
+        top: 2vw;
+        right: 2vw;
+        position: absolute;
+        width: $button-size;
+        height: $button-size;
+        overflow: hidden;
+        cursor: pointer;
+        > div {
+          position: relative;
+        }
+        &-block {
+          width: 40px;
+          height: 20px;
+          position: relative;
+          overflow: hidden;
+          &:before,
+          &:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: calc(55% - 4px);
+            display: block;
+            width: 4px;
+            height: 25px;
+            transform-origin: bottom center;
+            background: $Spot;
+            transition: all ease-out 280ms;
+          }
+          &:last-of-type {
+            transform: rotate(180deg);
+          }
+        }
+        .in {
+          .close-button-block {
+            &:before {
+              transition-delay: 280ms;
+              transform: translateX(20px) translateY(-20px) rotate(45deg);
+            }
+            &:after {
+              transition-delay: 280ms;
+              transform: translateX(-22px) translateY(-22px) rotate(-45deg);
+            }
+          }
+        }
+        .out {
+          position: absolute;
+          top: 0;
+          left: 0;
+          .close-button-block {
+            &:before {
+              transform: translateX(-5px) translateY(5px) rotate(45deg);
+            }
+            &:after {
+              transform: translateX(5px) translateY(5px) rotate(-45deg);
+            }
+          }
+        }
+        &:hover {
+          .in {
+            .close-button-block {
+              &:before {
+                transform: translateX(-5px) translateY(5px) rotate(45deg);
+              }
+              &:after {
+                transform: translateX(5px) translateY(5px) rotate(-45deg);
+              }
+            }
+          }
+          .out {
+            .close-button-block {
+              &:before {
+                transform: translateX(-20px) translateY(20px) rotate(45deg);
+              }
+              &:after {
+                transform: translateX(20px) translateY(20px) rotate(-45deg);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    h2 {
+      padding-left: 15vw;
+      z-index: 5;
+    }
+
+    .Div {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
       gap: 2vw;
@@ -1194,20 +1382,28 @@ footer {
         display: none;
       }
       figure {
-        img {
+        .GallaryImg {
+          object-fit: cover; /* Zoom the image to cover the square */
+          height: 20vw;
           width: 100%;
           filter: drop-shadow(0px 14px 10px #00000053);
+          cursor: pointer;
+          transition: 0.5s;
+
+          &:hover {
+            transform: scale(105%);
+          }
         }
         figcaption {
           h5 {
             color: $Spot;
-            font-size: 2vw;
+            font-size: 1.5vw;
             text-align: center;
             padding-top: 1vw;
           }
           p {
             text-align: center;
-            font-size: 1vw;
+            font-size: 0.8vw;
             padding-top: 0.5vw;
           }
         }
@@ -1217,7 +1413,12 @@ footer {
 
   #Kontakt {
     background-color: white;
-    padding: 5vw 5vw 10vw;
+    padding: 7vw 5vw 7vw;
+
+    h2 {
+      text-align: center;
+      padding-bottom: 2vw;
+    }
 
     article {
       padding: 0 0vw 2vw;
@@ -1292,6 +1493,7 @@ footer {
 
         /* Firefox */
         input[type="number"] {
+          appearance: textfield;
           -moz-appearance: textfield;
         }
       }
@@ -1330,11 +1532,11 @@ footer {
         position: absolute;
 
         &.Good {
-          font-size: 2vw;
+          font-size: 1.5vw;
           color: $Spot;
         }
         &.Bad {
-          font-size: 2vw;
+          font-size: 1.5vw;
           color: red;
         }
       }
@@ -1342,17 +1544,16 @@ footer {
   }
 
   footer {
-    padding: 2vw 5vw 2vw;
+    padding: 1vw 5vw 1vw;
     background-color: $Background;
 
     p {
       text-align: center;
-      font-size: 1.5vw;
+      font-size: 1vw;
       a {
         cursor: pointer;
         font-style: italic;
         color: white;
-        text-decoration: underline;
       }
     }
   }

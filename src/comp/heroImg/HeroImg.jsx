@@ -1,5 +1,5 @@
 import "../../App.scss";
-import Cover from "../../assets/img/Cover.jpg";
+import Cover from "../../assets/img/Cover.webp";
 
 export const HeroImg = (props) => {
   return (

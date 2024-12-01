@@ -17,6 +17,11 @@ export const Nav = (props) => {
           </AnchorLink>
         </li>
         <li>
+          <AnchorLink  href='#Portrait'>
+          Protræt
+          </AnchorLink>
+        </li>
+        <li>
           <AnchorLink  href='#Galleri'>
           Galleri
           </AnchorLink>

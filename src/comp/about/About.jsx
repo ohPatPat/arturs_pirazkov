@@ -29,8 +29,8 @@ export const About = (props) => {
             </p>
           </article>
         </figcaption>
-        <img id="Long" src={Long} alt="" loading="lazy" />
-        <img id="Short" src={Short} alt="" loading="lazy" />
+        <img id="Long" src={Long} alt="Portræt af Arturs Pirazkov" loading="lazy" />
+        <img id="Short" src={Short} alt="Portræt af Arturs Pirazkov" loading="lazy" />
       </figure>
     </section>
   );

@@ -18,8 +18,6 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-
-
 h2 {
   font-size: 18vw;
   text-transform: uppercase;
@@ -267,6 +265,11 @@ header {
 #Priser {
   padding-top: 35vw;
   article {
+    h3 {
+      text-transform: uppercase;
+      color: $Spot;
+      font-size: 5vw;
+    }
     p {
       padding-top: 5vw;
       font-size: 4vw;
@@ -293,6 +296,35 @@ header {
         border: solid 1px $Spot;
       }
     }
+  }
+}
+
+#Portrait {
+  padding-top: 12vw;
+  article {
+    h3 {
+      text-transform: uppercase;
+      color: $Spot;
+      font-size: 5vw;
+    }
+    p {
+      padding-top: 5vw;
+      font-size: 4vw;
+      line-height: 1.5;
+      span {
+        text-decoration: underline;
+      }
+    }
+  }
+  figure{
+    padding-top: 1vw;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3vw;
+  }
+  img {
+    width: 100%;
+    filter: drop-shadow(0px 14px 10px #00000053);
   }
 }
 
@@ -372,6 +404,27 @@ header {
     }
   }
 }
+
+#Gift {
+  padding-top: 12vw;
+  figure{
+    width: 100%;
+    img {
+      width: 100%;
+      margin: auto;
+      filter: drop-shadow(0px 14px 10px #00000053);
+    }
+  }
+  p {
+    padding-top: 5vw;
+    font-size: 5vw;
+    line-height: 1.5;
+    span {
+      text-decoration: underline;
+    }
+  }
+}
+
 
 #Kontakt {
   background-color: white;
@@ -511,10 +564,8 @@ footer {
   }
 }
 
-
 /* Styles for medium screens (tablets) */
 @media (min-width: 768px) {
-
   h2 {
     font-size: 10vw;
     text-transform: uppercase;
@@ -528,7 +579,6 @@ footer {
     gap: 2vw;
     padding: 0vw 5vw 10vw;
   }
-
 
   header {
     position: fixed;
@@ -645,14 +695,18 @@ footer {
     padding-bottom: 10vw;
     position: relative;
 
-
     article {
       margin: auto;
+      h3 {
+        font-size: 3vw;
+        margin: auto;
+        width: 70vw;
+      }
       p {
         text-align: center;
         width: 70vw;
         padding-top: 1vw;
-        font-size: 1.5vw;
+        font-size: 2vw;
         line-height: 1.5;
         margin: auto;
         span {
@@ -676,6 +730,42 @@ footer {
         hr {
           border: solid 1px $Spot;
         }
+      }
+    }
+  }
+
+  #Portrait {
+    padding-top: 10vw;
+    padding-bottom: 10vw;
+    position: relative;
+
+    article {
+      margin: auto;
+      h3 {
+        font-size: 3vw;
+        margin: 0;
+        width: 70vw;
+      }
+      p {
+        text-align: center;
+        width: 70vw;
+        padding-top: 1vw;
+        font-size: 1.5vw;
+        line-height: 1.5;
+        margin: auto;
+        span {
+          text-decoration: underline;
+        }
+      }
+    }
+    figure {
+      padding-top: 1vw;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2vw;
+      img {
+        width: 48.5%;
       }
     }
   }
@@ -789,7 +879,6 @@ footer {
       }
     }
 
-
     .Div {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -873,10 +962,30 @@ footer {
     }
   }
 
+  #Gift {
+    padding-top: 12vw;
+    figure{
+      width: 100%;
+      img {
+        width: 100%;
+        margin: auto;
+        filter: drop-shadow(0px 14px 10px #00000053);
+      }
+    }
+    p {
+      padding-top: 5vw;
+      font-size: 3vw;
+      line-height: 1.5;
+      span {
+        text-decoration: underline;
+      }
+    }
+  }  
+
   #Kontakt {
     background-color: white;
     padding: 12vw 5vw 20vw;
-  
+
     article {
       padding: 0 5vw 5vw;
       p {
@@ -885,14 +994,14 @@ footer {
         font-style: italic;
       }
     }
-  
+
     form {
       position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
       width: 100%;
-  
+
       #FormWrapper {
         width: 100%;
         display: flex;
@@ -901,7 +1010,7 @@ footer {
         gap: 6vw;
         padding-bottom: 5vw;
       }
-  
+
       .InputWrapper,
       .InputWrapperError,
       .TextareaError {
@@ -909,7 +1018,7 @@ footer {
         flex-direction: column;
         align-items: start;
         width: 100%;
-  
+
         &.InputWrapperError,
         &.TextareaError {
           display: flex;
@@ -921,7 +1030,7 @@ footer {
             border: solid 3px red;
           }
         }
-  
+
         input,
         textarea {
           width: 100%;
@@ -931,7 +1040,7 @@ footer {
           outline: 3px solid $Background2;
           border: none;
           font-size: 3.5vw;
-  
+
           &:focus {
             outline: 3px solid $Spot;
           }
@@ -944,7 +1053,7 @@ footer {
         input::-webkit-inner-spin-button {
           -webkit-appearance: none;
         }
-  
+
         /* Firefox */
         input[type="number"] {
           appearance: textfield;
@@ -958,7 +1067,7 @@ footer {
         font-size: 2.5vw;
         font-weight: 600;
       }
-  
+
       button {
         background-color: $Spot;
         margin: 0;
@@ -971,12 +1080,12 @@ footer {
         font-family: industry-inc-base, sans-serif;
         font-weight: 400;
         font-style: normal;
-  
+
         &:hover {
           background-color: $DarkSpot;
         }
       }
-  
+
       .noShow {
         display: none;
         margin-top: 5vw;
@@ -984,7 +1093,7 @@ footer {
       .Show {
         bottom: -10vw;
         position: absolute;
-  
+
         &.Good {
           font-size: 5vw;
           color: $Spot;
@@ -996,8 +1105,6 @@ footer {
       }
     }
   }
-  
-  
 }
 
 /* Styles for large screens (desktops) */
@@ -1184,6 +1291,12 @@ footer {
 
     article {
       margin: auto;
+      h3 {
+        font-size: 1.5vw;
+        margin: auto;
+        width: 60vw;
+      }
+
       p {
         text-align: center;
         width: 50vw;
@@ -1211,6 +1324,49 @@ footer {
         hr {
           border: solid 1px $Spot;
         }
+      }
+    }
+  }
+
+  #Portrait {
+    padding-top: 15vw;
+    padding-bottom: 0;
+    position: relative;
+
+    h2 {
+      position: absolute;
+      top: 8vw;
+      left: 15vw;
+      z-index: 5;
+    }
+
+    article {
+      margin: auto;
+      h3 {
+        font-size: 1.5vw;
+        margin: auto;
+        width: 60vw;
+      }
+
+      p {
+        text-align: center;
+        width: 50vw;
+        padding-top: 1vw;
+        font-size: 1vw;
+        line-height: 1.5;
+        margin: auto;
+        span {
+          text-decoration: underline;
+        }
+      }
+    }
+    figure{
+      padding-top: 1vw;
+      display: flex;
+      gap: 2%;
+
+      img{
+        width: 23.5%;
       }
     }
   }
@@ -1411,6 +1567,42 @@ footer {
       }
     }
   }
+
+  #Gift {
+    position: relative;
+    padding-top: 15vw;
+    h2 {
+      position: absolute;
+      top: 8vw;
+      left: 15vw;
+      z-index: 5;
+    }
+
+    figure{
+      width: 100%;
+      margin: auto;
+      img {
+        display: block;
+        width: 60%;
+        margin: auto;
+        filter: drop-shadow(0px 14px 10px #00000053);
+      }
+    }
+    article{
+      display: flex;
+      width: 60%;
+      margin: auto;
+    }
+    p {
+      text-align: center;
+      padding-top: 2vw;
+      font-size: 1.5vw;
+      line-height: 1.5;
+      span {
+        text-decoration: underline;
+      }
+    }
+  }  
 
   #Kontakt {
     background-color: white;

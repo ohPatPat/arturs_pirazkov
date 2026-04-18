@@ -264,6 +264,10 @@ header {
 
 #Priser {
   padding-top: 35vw;
+  .PriserSpace {
+    padding-top: 5vw;
+  }
+
   article {
     h3 {
       text-transform: uppercase;
@@ -712,6 +716,7 @@ footer {
     padding-top: 10vw;
     padding-bottom: 10vw;
     position: relative;
+    
 
     article {
       margin: auto;
@@ -1321,6 +1326,11 @@ footer {
     padding-top: 15vw;
     padding-bottom: 0;
     position: relative;
+
+      .PriserSpace {
+    padding-top: 2vw;
+  }
+
 
     h2 {
       position: absolute;

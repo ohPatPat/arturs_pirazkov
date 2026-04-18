@@ -21,6 +21,9 @@ function App() {
         <Portrait />
         <Gallary />
         < Gift />
+        <button id="callButton">
+          <a href="tel:+4550236949">Ring til mig <br /> +45 50236949</a>
+        </button>
       </div>
         <Contact />
         <Footer />

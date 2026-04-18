@@ -26,10 +26,10 @@ export const Contact = () => {
     //e.preventDefault();
     emailjs
       .sendForm(
-        "service_y61gwxn",
-        "template_ymliug1",
+        "service_fc6muy9",
+        "template_o56ymju",
         form.current,
-        "PYEu-muCwrU1C2kq2"
+        "PWAaqSbEwQXEo4NqD"
       )
 
       .then(

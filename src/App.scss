@@ -316,7 +316,7 @@ header {
       }
     }
   }
-  figure{
+  figure {
     padding-top: 1vw;
     display: flex;
     flex-wrap: wrap;
@@ -407,7 +407,7 @@ header {
 
 #Gift {
   padding-top: 12vw;
-  figure{
+  figure {
     width: 100%;
     img {
       width: 100%;
@@ -425,6 +425,24 @@ header {
   }
 }
 
+#callButton {
+  position: fixed;
+  background-color: $DarkSpot;
+  border: none;
+  width: auto;
+  right: 8vw;
+  bottom: 8vw;
+  padding: 2vw 3vw;
+  border-radius: 10px;
+  z-index: 999999999;
+  filter: drop-shadow(0px 14px 10px #00000053);
+  a {
+    font-size: 4vw;
+    line-height: 1.5;
+    font-weight: bold;
+    color: white;
+  }
+}
 
 #Kontakt {
   background-color: white;
@@ -964,7 +982,7 @@ footer {
 
   #Gift {
     padding-top: 12vw;
-    figure{
+    figure {
       width: 100%;
       img {
         width: 100%;
@@ -980,7 +998,29 @@ footer {
         text-decoration: underline;
       }
     }
-  }  
+  }
+
+  #callButton {
+    position: fixed;
+    background-color: $Spot;
+    border: none;
+    width: auto;
+    right: 3vw;
+    bottom: 3vw;
+    padding: 1vw 2vw;
+    border-radius: 10px;
+    z-index: 999999999;
+    filter: drop-shadow(0px 14px 10px #00000053);
+    &:hover {
+      background-color: $DarkSpot;
+    }
+    a {
+      font-size: 3vw;
+      line-height: 1.5;
+      font-weight: bold;
+      color: white;
+    }
+  }
 
   #Kontakt {
     background-color: white;
@@ -1360,12 +1400,12 @@ footer {
         }
       }
     }
-    figure{
+    figure {
       padding-top: 1vw;
       display: flex;
       gap: 2%;
 
-      img{
+      img {
         width: 23.5%;
       }
     }
@@ -1578,7 +1618,7 @@ footer {
       z-index: 5;
     }
 
-    figure{
+    figure {
       width: 100%;
       margin: auto;
       img {
@@ -1588,7 +1628,7 @@ footer {
         filter: drop-shadow(0px 14px 10px #00000053);
       }
     }
-    article{
+    article {
       display: flex;
       width: 60%;
       margin: auto;
@@ -1602,7 +1642,29 @@ footer {
         text-decoration: underline;
       }
     }
-  }  
+  }
+
+  #callButton {
+    position: fixed;
+    background-color: $Spot;
+    border: none;
+    width: auto;
+    right: 2vw;
+    bottom: 2vw;
+    padding: 0.5vw 1vw;
+    border-radius: 10px;
+    z-index: 999999999;
+    filter: drop-shadow(0px 14px 10px #00000053);
+    &:hover {
+      background-color: $DarkSpot;
+    }
+    a {
+      font-size: 1vw;
+      line-height: 1.5;
+      font-weight: bold;
+      color: white;
+    }
+  }
 
   #Kontakt {
     background-color: white;

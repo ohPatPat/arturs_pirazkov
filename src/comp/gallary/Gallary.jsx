@@ -230,6 +230,8 @@ import Ship13 from "../../assets/img/ship/Nordlysets Kyst.webp";
 import Little_Ship13 from "../../assets/img/ship/Little_Nordlysets Kyst.webp";
 import Ship14 from "../../assets/img/ship/Havets Stød.webp";
 import Little_Ship14 from "../../assets/img/ship/Little_Havets Stød.webp";
+import Ship15 from "../../assets/img/ship/Fiskerbåde i hvile.webp";
+import Little_Ship15 from "../../assets/img/ship/Little_Fiskerbåde i hvile.webp";
 
 import Animal1 from "../../assets/img/animal/Barndommens Nysgerrighed.webp";
 import Little_Animal1 from "../../assets/img/animal/Little_Barndommens Nysgerrighed.webp";
@@ -334,10 +336,12 @@ import Stuff13 from "../../assets/img/stuff/NAT I SKAGEN.webp";
 import Little_Stuff13 from "../../assets/img/stuff/Little_NAT I SKAGEN.webp";
 import Stuff14 from "../../assets/img/stuff/Hærdet af Havet.webp";
 import Little_Stuff14 from "../../assets/img/stuff/Little_Hærdet af Havet.webp";
-import Stuff15 from "../../assets/img/stuff/Hærdet af Havet.webp";
-import Little_Stuff15 from "../../assets/img/stuff/Little_Hærdet af Havet.webp";
-import Stuff16 from "../../assets/img/stuff/I Evighedens Lys.webp";
-import Little_Stuff16 from "../../assets/img/stuff/Little_I Evighedens Lys.webp";
+import Stuff15 from "../../assets/img/stuff/I Evighedens Lys.webp";
+import Little_Stuff15 from "../../assets/img/stuff/Little_I Evighedens Lys.webp";
+import Stuff16 from "../../assets/img/stuff/Den røde vagt.webp";
+import Little_Stuff16 from "../../assets/img/stuff/Little_Den røde vagt.webp";
+import Stuff17 from "../../assets/img/stuff/Den røde vagt2.webp";
+import Little_Stuff17 from "../../assets/img/stuff/Little_Den røde vagt2.webp";
 
 export const Gallary = (props) => {
   const [auroraIsChecked, setAuroraChecked] = useState(true);
@@ -1272,6 +1276,13 @@ export const Gallary = (props) => {
       topic: "Skib",
       checked: shipIsChecked,
     },
+    {
+      img: Ship15,
+      imgLittle: Little_Ship15,
+      name: "Fiskerbåde i hvile",
+      topic: "Skib",
+      checked: shipIsChecked,
+    },
   ];
 
   let Animal = [
@@ -1491,49 +1502,48 @@ export const Gallary = (props) => {
       topic: "Panorama",
       checked: panoramaIsChecked,
     },
-        {
+    {
       img: Panorama2,
       imgLittle: Little_Panorama2,
       name: "Fyrtårn i Skjul",
       topic: "Panorama",
       checked: panoramaIsChecked,
     },
-            {
+    {
       img: Panorama3,
       imgLittle: Little_Panorama3,
       name: "Lyset i Det Øde",
       topic: "Panorama",
       checked: panoramaIsChecked,
     },
-        {
+    {
       img: Panorama4,
       imgLittle: Little_Panorama4,
       name: "Lysets Ende og Begyndelse",
       topic: "Panorama",
       checked: panoramaIsChecked,
     },
-        {
+    {
       img: Panorama5,
       imgLittle: Little_Panorama5,
       name: "Morgenklarhed",
       topic: "Panorama",
       checked: panoramaIsChecked,
     },
-        {
+    {
       img: Panorama6,
       imgLittle: Little_Panorama6,
       name: "Saltet Hverdag",
       topic: "Panorama",
       checked: panoramaIsChecked,
     },
-        {
+    {
       img: Panorama7,
       imgLittle: Little_Panorama7,
       name: "Tordenens Horisont",
       topic: "Panorama",
       checked: panoramaIsChecked,
     },
-
   ];
 
   let Stuff = [
@@ -1638,17 +1648,25 @@ export const Gallary = (props) => {
     {
       img: Stuff15,
       imgLittle: Little_Stuff15,
-      name: "Hærdet af Havet",
+      name: "I Evighedens Lys",
       topic: "Diverse",
       checked: stuffIsChecked,
     },
     {
       img: Stuff16,
       imgLittle: Little_Stuff16,
-      name: "I Evighedens Lys",
+      name: "Den røde vagt",
       topic: "Diverse",
       checked: stuffIsChecked,
     },
+        {
+      img: Stuff17,
+      imgLittle: Little_Stuff17,
+      name: "Den røde vagt-V2",
+      topic: "Diverse",
+      checked: stuffIsChecked,
+    },
+
   ];
 
   const ImgLoop = (props) => {
